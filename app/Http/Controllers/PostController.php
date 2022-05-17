@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -25,12 +26,9 @@ class PostController extends Controller
 
         $post = new Post();
         $post->customer = $input["customer"];
-        // $post->product = $input["product"];
         $post->product = implode(",", $input["product"]);
         $post->start = $input["start"];
         $post->end = $input["end"];
-        // $input['action'] = serialize($input['action']);
-        // $post->action = $input["action"];
         $post->action = implode("," , $_POST["action"]);
         $post->content = $input["content"];
         $post->comment = $input["comment"];
@@ -43,6 +41,18 @@ class PostController extends Controller
         $target = $request->input('target');
         $match = Post::whereDate('created_at', $target)->get();
         return view('post.page', compact("target", 'match'));
+    }
+
+    public function page2(Request $request) {
+        $data = DB::table('posts')->select('content as title', 'created_at as start', 'updated_at as end')->get();
+        // return response()->json($data);
+        echo json_encode($data);
+        // $data = json_encode($data, true);
+        return view('post.page2', compact("data"));
+
+        // $day = $request->input('target');
+        // $date = Post::whereDate('created_at', $day)->get();
+        // return view('post.page2', compact("day", 'date'));
     }
 
 }

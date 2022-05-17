@@ -6,5 +6,8 @@
         <div class="button09">
             <a href="/post/index">日報表示</a>
         </div>
+        <div class="button09">
+            <a href="/post/index">日報表示カレンダー形式</a>
+        </div>
     </div>
 </x-app>

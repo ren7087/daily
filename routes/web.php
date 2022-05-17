@@ -25,3 +25,6 @@ Route::post('/post/store', [PostController::class, 'store'])->name('post.store')
 
 Route::get('/post/page', [PostController::class, 'page'])->name('post.page');
 Route::post('/post/page', [PostController::class, 'page'])->name('post.page');
+
+Route::get('/post/page2', [PostController::class, 'page2'])->name('post.page2');
+Route::post('/post/page2', [PostController::class, 'page2'])->name('post.page2');
