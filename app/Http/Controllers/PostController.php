@@ -25,7 +25,8 @@ class PostController extends Controller
 
         $post = new Post();
         $post->customer = $input["customer"];
-        $post->product = $input["product"];
+        // $post->product = $input["product"];
+        $post->product = implode(",", $input["product"]);
         $post->start = $input["start"];
         $post->end = $input["end"];
         // $input['action'] = serialize($input['action']);

@@ -17,7 +17,7 @@
 
               <div>
                 <label for="title">{{ ('お客様') }}</label>
-                <textarea name="customer" id="customer" cols="30" rows="2" class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror"></textarea>
+                <textarea name="customer" id="customer" cols="30" rows="2" required class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror"></textarea>
 
                 @error('customer')
                 <div class="text-red-500 text-sm mt-2">
@@ -26,9 +26,11 @@
                 @enderror
               </div><br>
 
-              <div>
+              <div  id="input_plural">
                 <label for="product">{{ ('商品') }}</label>
-                <textarea name="product" id="product" cols="30" rows="2" class="w-full rounded-lg border-2 bg-gray-100 @error('product') border-red-500 @enderror"></textarea>
+                <textarea name="product[]" id="product" cols="30" rows="2" required class="w-full rounded-lg border-2 bg-gray-100 @error('product') border-red-500 @enderror"></textarea>
+                <input type="button" value="＋" class="add pluralBtn">
+                <input type="button" value="－" class="del pluralBtn">
 
                 @error('product')
                 <div class="text-red-500 text-sm mt-2">
@@ -39,7 +41,7 @@
 
               <div>
                 <label for="start">{{ ('開始時刻') }}</label>
-                <input type="time" name="start">
+                <input type="time" name="start" required>
                 @error('start')
                 <div class="text-red-500 text-sm mt-2">
                   {{ $message }}
@@ -49,7 +51,7 @@
 
               <div>
                 <label for="end">{{ ('終了時刻') }}</label>
-                <input type="time" name="end">
+                <input type="time" name="end" required>
                 @error('end')
                 <div class="text-red-500 text-sm mt-2">
                   {{ $message }}
@@ -84,7 +86,7 @@
 
               <div class="mt-4">
                 <label for="content">{{ ('内容') }}</label>
-                <textarea name="content" id="content" cols="30" rows="4" class="w-full rounded-lg border-2 bg-gray-100 @error('content') border-red-500 @enderror"></textarea>
+                <textarea name="content" id="content" cols="30" rows="4" required value="{{ old('content') }}"class="w-full rounded-lg border-2 bg-gray-100 @error('content') border-red-500 @enderror"></textarea>
 
                 @error('content')
                 <div class="text-red-500 text-sm mt-2">
@@ -94,7 +96,7 @@
               </div>
               <div class="mt-4">
                 <label for="comment">{{ ('感想') }}</label>
-                <textarea name="comment" id="comment" cols="30" rows="4" class="w-full rounded-lg border-2 bg-gray-100 @error('comment') border-red-500 @enderror"></textarea>
+                <textarea name="comment" id="comment" cols="30" rows="4" required value="{{ old('comment') }}"class="w-full rounded-lg border-2 bg-gray-100 @error('comment') border-red-500 @enderror"></textarea>
 
                 @error('comment')
                 <div class="text-red-500 text-sm mt-2">
@@ -110,4 +112,18 @@
         </div>
       </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).on("click", ".add", function() {
+        $(this).parent().clone(true).insertAfter($(this).parent());
+    });
+    $(document).on("click", ".del", function() {
+        var target = $(this).parent();
+        if (target.parent().children().length > 1) {
+            target.remove();
+        }
+    });
+    </script>
+
 </x-app>
