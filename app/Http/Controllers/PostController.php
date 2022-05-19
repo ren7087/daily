@@ -44,15 +44,10 @@ class PostController extends Controller
     }
 
     public function page2(Request $request) {
-        $data = DB::table('posts')->select('content as title', 'created_at as start', 'updated_at as end')->get();
-        // return response()->json($data);
-        echo json_encode($data);
-        // $data = json_encode($data, true);
-        return view('post.page2', compact("data"));
-
-        // $day = $request->input('target');
+        $day = $request->input('target');
         // $date = Post::whereDate('created_at', $day)->get();
-        // return view('post.page2', compact("day", 'date'));
+        $date = Post::get();
+        return view('post.page2', compact("day", 'date'));
     }
 
 }
