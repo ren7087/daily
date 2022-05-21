@@ -20,7 +20,7 @@ class PostController extends Controller
     public function add()
     {
         $time = new Carbon(Carbon::now());
-        $today = $time->format('Y年m月d日');
+        $today = $time->format('Y-m-d');
         return view('post.add', compact("time", "today"));
     }
 
@@ -31,8 +31,8 @@ class PostController extends Controller
         $post = new Post();
         $post->customer = $input["customer"];
         $post->product = implode(",", $input["product"]);
-        $post->start = $input["start"];
-        $post->end = $input["end"];
+        $post->start = $_POST['date1']." ".$input["start"];
+        $post->end = $_POST['date2']. " ".$input["end"];
         $post->action = implode("," , $_POST["action"]);
         $post->content = $input["content"];
         $post->comment = $input["comment"];

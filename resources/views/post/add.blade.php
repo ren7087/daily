@@ -41,6 +41,7 @@
 
               <div>
                 <label for="start">{{ ('開始時刻') }}</label>
+                <input type="hidden" name='date1' value=<?php echo $today; ?>>
                 <input type="time" name="start" required>
                 @error('start')
                 <div class="text-red-500 text-sm mt-2">
@@ -51,6 +52,7 @@
 
               <div>
                 <label for="end">{{ ('終了時刻') }}</label>
+                <input type="hidden" name='date2' value=<?php echo $today; ?>>
                 <input type="time" name="end" required>
                 @error('end')
                 <div class="text-red-500 text-sm mt-2">
