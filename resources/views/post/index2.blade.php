@@ -2,8 +2,8 @@
     <div style="text-align:center; margin-top:100px">
         <h2>担当者名 : 田中太郎</h2><br>
 
-        <h2>対象日</h2>
-        <form action="{{ route('post.page') }}" method="POST">
+        <h2>カレンダー対象日</h2>
+        <form action="{{ route('post.page2') }}" method="POST">
             @csrf
             <input type="date" name="target">
             <div class="mt-4">

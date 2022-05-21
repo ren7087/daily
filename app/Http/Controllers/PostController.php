@@ -13,6 +13,10 @@ class PostController extends Controller
         return view('post.index');
     }
 
+    public function index2() {
+        return view('post.index2');
+    }
+
     public function add()
     {
         $time = new Carbon(Carbon::now());
