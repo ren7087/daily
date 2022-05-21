@@ -52,7 +52,7 @@
                     events: [
                         @foreach ($date as $daily)
                         {
-                            id: '田中太郎<br><br><b>商品</b><br> {{ $daily['product'] }} <br><br><b>内容</b><br> {{ $daily['content'] }} <br><br><b>感想</b><br> {{ $daily['comment'] }}',
+                            id: '田中太郎　<br><br><b>お客様</b><br> {{ $daily['customer'] }}　<br><br><b>商品</b><br> {{ $daily['product'] }} <br><br><b>内容</b><br> {{ $daily['content'] }} <br><br><b>感想</b><br> {{ $daily['comment'] }}',
                             title: '{{ $daily['action'] }}',
                             description: '{{ $daily['content'] }}',
                             start: '{{ $daily['start'] }}',
