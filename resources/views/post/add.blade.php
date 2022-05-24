@@ -9,7 +9,9 @@
 
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <h3>{{ $today }}</h3><h3>田中太郎さん</h3>
+        <div style="margin-left:25px">
+          <h3>{{ $today }}</h3><h3>田中太郎さん</h3>
+        </div>
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 bg-white border-b border-gray-200">
             <form action="{{ route('post.store') }}" method="POST">
@@ -122,7 +124,7 @@
     });
     $(document).on("click", ".del", function() {
         var target = $(this).parent();
-        if (target.parent().children().length > 1) {
+        if (target.children().length > 1) {
             target.remove();
         }
     });

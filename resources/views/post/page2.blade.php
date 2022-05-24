@@ -6,7 +6,10 @@
 
         <title>Daly Work</title>
 
-        <link href='{{ asset('fullcalendar/lib/main.css') }}' rel='stylesheet'>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <link href='{{ asset('fullcalendar/lib/main.css') }}' rel='stylesheet' />
         <script src='{{ asset('fullcalendar/lib/main.js') }}'></script>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -49,13 +52,13 @@
                     events: [
                         @foreach ($date as $daily)
                         {
-                            id: '田中太郎　<br><br><b>お客様</b><br> {{ $daily['customer'] }}　<br><br><b>商品</b><br> {{ $daily['product'] }} <br><br><b>内容</b><br> {{ $daily['content'] }} <br><br><b>感想</b><br> {{ $daily['comment'] }}',
-                            title: '{{ $daily['action'] }}',
-                            description: '{{ $daily['content'] }}',
-                            start: '{{ $daily['start'] }}',
-                            end: '{{ $daily['end'] }}',
+                            id: `田中太郎　<br><br><b>お客様</b><br> {!! nl2br(e($daily['customer'])) !!}　<br><br><b>商品</b><br> {!! nl2br(e($daily['product'])) !!} <br><br><b>内容</b><br> {!! nl2br(e($daily['content'])) !!} <br><br><b>感想</b><br> {!! nl2br(e($daily['comment'])) !!}`,
+                            title: `{!! nl2br(e($daily['action'])) !!}`,
+                            start: `{!! nl2br(e($daily['start'])) !!}`,
+                            end: `{!! nl2br(e($daily['end'])) !!}`,
                         },
                         @endforeach
+
                         {
                             title: 'トップページへ戻る',
                             url: '/',
@@ -71,11 +74,14 @@
                         $('#detail-area').html(event_data).show();
                     },
                 });
+
                 calendar.render();
             });
+
             function closeArea(){
                 $('#detail-area').hide();
             }
         </script>
+
     </body>
 </html>
