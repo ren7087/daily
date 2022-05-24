@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ asset('css/button.css') }}">
 </head>
 <body>
-  <a href="/">HOME</a>
+  <a href="/"><img src="{{ asset('img/home.jpg') }}" alt=""></a>
   {{ $slot }}
 </body>
 </html>
