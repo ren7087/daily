@@ -17,7 +17,7 @@
 
               <div>
                 <label for="title">{{ ('お客様') }}</label>
-                <textarea name="customer" id="customer" cols="30" rows="2" required class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror"></textarea>
+                <input name="customer" id="customer" required class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror">
 
                 @error('customer')
                 <div class="text-red-500 text-sm mt-2">
@@ -28,7 +28,7 @@
 
               <div  id="input_plural">
                 <label for="product">{{ ('商品') }}</label>
-                <textarea name="product[]" id="product" cols="30" rows="2" required class="w-full rounded-lg border-2 bg-gray-100 @error('product') border-red-500 @enderror"></textarea>
+                <input name="product[]" id="product" required class="w-full rounded-lg border-2 bg-gray-100 @error('product') border-red-500 @enderror">
                 <input type="button" value="＋" class="add pluralBtn">
                 <input type="button" value="－" class="del pluralBtn">
 
