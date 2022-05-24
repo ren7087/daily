@@ -9,12 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function index() {
-        return view('post.index');
-    }
-
     public function index2() {
-        return view('post.index2');
+        $time = new Carbon(Carbon::now());
+        $today = $time->format('Y-m-d');
+        return view('post.index2', compact("time", "today"));
     }
 
     public function add()
@@ -39,12 +37,6 @@ class PostController extends Controller
         $post->save();
 
         return redirect('/')->with('success', '日報を登録しました');
-    }
-
-    public function page(Request $request) {
-        $target = $request->input('target');
-        $match = Post::whereDate('created_at', $target)->get();
-        return view('post.page', compact("target", 'match'));
     }
 
     public function page2(Request $request) {
