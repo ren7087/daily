@@ -6,10 +6,7 @@
 
         <title>Daly Work</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <link href='{{ asset('fullcalendar/lib/main.css') }}' rel='stylesheet' />
+        <link href='{{ asset('fullcalendar/lib/main.css') }}' rel='stylesheet'>
         <script src='{{ asset('fullcalendar/lib/main.js') }}'></script>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -59,7 +56,6 @@
                             end: '{{ $daily['end'] }}',
                         },
                         @endforeach
-
                         {
                             title: 'トップページへ戻る',
                             url: '/',
@@ -75,14 +71,11 @@
                         $('#detail-area').html(event_data).show();
                     },
                 });
-
                 calendar.render();
             });
-
             function closeArea(){
                 $('#detail-area').hide();
             }
         </script>
-
     </body>
 </html>
