@@ -120,11 +120,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
     $(document).on("click", ".add", function() {
-        $(this).parent().clone(true).insertAfter($(this).parent());
+        // $(this).parent().clone(true).val('').insertAfter($(this).parent());
+        $("#input_plural").clone(true).val('').insertAfter($(this).parent());
+        $('#product').val('');
     });
     $(document).on("click", ".del", function() {
         var target = $(this).parent();
-        if (target.children().length > 1) {
+        if (target.children().length >= 2) {
             target.remove();
         }
     });
