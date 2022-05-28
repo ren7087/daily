@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\TimeRequest;
 
 class PostController extends Controller
 {
@@ -22,7 +23,7 @@ class PostController extends Controller
         return view('post.add', compact("time", "today"));
     }
 
-    public function store(Request $request)
+    public function store(TimeRequest $request)
     {
         $input = $request->only('customer', 'product', 'start', 'end', 'action', 'content',  'comment');
 
