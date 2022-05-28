@@ -8,6 +8,7 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/table.css') }}">
   <link rel="stylesheet" href="{{ asset('css/button.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
 </head>
 <body>
   <a href="/"><img src="{{ asset('img/home.jpg') }}" alt=""></a>

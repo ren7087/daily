@@ -9,12 +9,15 @@
         <form action="{{ route('post.page2') }}" method="POST">
             @csrf
             <div class="mt-4">
-                <div id="datepicker" style="margin-left:570px"></div><br>
+                {{-- <div id="datepicker" style="margin-left:570px"></div><br> --}}
+                <div id="datepicker" class="date"></div><br>
                 <input type="text" id="output" name="target" value=<?php echo $today; ?>>
                 <button type="submit" class="bg-blue-500 rounded font-medium px-4 py-2 text-white">{{ __('表示') }}</button>
             </div>
         </form>
     </div>
+
+
 
     <script>
         $('#datepicker').datepicker({

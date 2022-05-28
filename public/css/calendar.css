@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+    .date{
+        margin-left:570px
+    }
+}
+
+@media (max-width: 767px) {
+    .date{
+        margin-left:35px
+    }
+}
