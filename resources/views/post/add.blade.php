@@ -28,17 +28,19 @@
                 @enderror
               </div><br>
 
-              <div  id="input_plural">
-                <label for="product">{{ ('商品') }}</label>
-                <input name="product[]" id="product" required class="w-full rounded-lg border-2 bg-gray-100 @error('product') border-red-500 @enderror">
-                <input type="button" value="＋" class="add pluralBtn">
-                <input type="button" value="－" class="del pluralBtn">
+              <div id="input_pluralBox">
+                <div  id="input_plural">
+                    <label for="product">{{ ('商品') }}</label>
+                    <input name="product[]" id="product" required class="w-full rounded-lg border-2 bg-gray-100 @error('product') border-red-500 @enderror">
+                    <input type="button" value="＋" class="add pluralBtn">
+                    <input type="button" value="－" class="del pluralBtn">
 
-                @error('product')
-                <div class="text-red-500 text-sm mt-2">
-                  {{ $message }}
+                    @error('product')
+                    <div class="text-red-500 text-sm mt-2">
+                    {{ $message }}
+                    </div>
+                    @enderror
                 </div>
-                @enderror
               </div><br>
 
               <div>
@@ -126,7 +128,7 @@
     });
     $(document).on("click", ".del", function() {
         var target = $(this).parent();
-        if (target.children().length >= 2) {
+        if (target.parent().children().length > 1) {
             target.remove();
         }
     });
