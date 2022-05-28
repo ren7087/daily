@@ -65,25 +65,25 @@
                 @enderror
               </div><br>
 
-              行為
+              行為(1つ以上選択してください)
               <div>
-                <div style="display:inline-block">
+                <div style="display:inline-block" class="check">
                     <div>
-                        <input type="checkbox" name="action[]" class="form-check-input" id="action1" value="打ち合わせ">
+                        <input type="checkbox" name="action[]" class="check" id="action1" value="打ち合わせ">
                         <label for="release1" class="form-check-label">打ち合わせ</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="action[]" class="form-check-input" id="action2" value="商談">
+                        <input type="checkbox" name="action[]" class="check" id="action2" value="商談">
                         <label for="release2" class="form-check-label">商談</label>
                     </div>
                 </div>
                 <div style="display:inline-block">
                     <div>
-                        <input type="checkbox" name="action[]" class="form-check-input" id="action3" value="見積もり">
+                        <input type="checkbox" name="action[]" class="check" id="action3" value="見積もり">
                         <label for="release1" class="form-check-label">見積もり</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="action[]" class="form-check-input" id="action4" value="セミナー">
+                        <input type="checkbox" name="action[]" class="check" id="action4" value="セミナー">
                         <label for="release2" class="form-check-label">セミナー</label>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                 @enderror
               </div><br>
               <div class="mt-4">
-                <button type="submit" class="bg-blue-500 rounded font-medium px-4 py-2 text-white">{{ __('登録') }}</button>
+                <button type="submit" id="btn" class="bg-blue-500 rounded font-medium px-4 py-2 text-white">{{ __('登録') }}</button>
               </div>
             </form>
           </div>
@@ -122,7 +122,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
     $(document).on("click", ".add", function() {
-        // $(this).parent().clone(true).val('').insertAfter($(this).parent());
         $("#input_plural").clone(true).val('').insertAfter($(this).parent());
         $('#product').val('');
     });
@@ -132,6 +131,19 @@
             target.remove();
         }
     });
+    </script>
+
+    <script>
+        $(function(){
+        $("#btn").prop("disabled", true);
+            $("input[type='checkbox']").on('change', function () {
+                if ($(".check:checked").length > 0) {
+                $("#btn").prop("disabled", false);
+                } else {
+                $("#btn").prop("disabled", true);
+                }
+            });
+        });
     </script>
 
 </x-app>
