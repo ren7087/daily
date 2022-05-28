@@ -69,12 +69,6 @@
                             end: `{!! nl2br(e($daily['end'])) !!}`,
                         },
                         @endforeach
-
-                        {
-                            title: 'トップページへ戻る',
-                            url: '/',
-                            start: day,
-                        },
                     ],
                     eventClick: function(item, jsEvent, view) {
                         var event_data = '<a href="javascript:void(0);" class="close" onclick="return closeArea();">[close]</a><br>';
