@@ -77,6 +77,7 @@
                         event_data += '<b>担当者</b><br>\n';
                         event_data += item.event.id + '<br><br>\n';
                         $('#detail-area').html(event_data).show();
+                        scrollTo(0, 0);
                     },
                 });
 
@@ -137,6 +138,7 @@
                         event_data += '<b>担当者</b><br>\n';
                         event_data += item.event.id + '<br><br>\n';
                         $('#detail-area').html(event_data).show();
+                        scrollTo(0, 0);
                     },
                 });
 
