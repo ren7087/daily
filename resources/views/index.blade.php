@@ -15,6 +15,9 @@
         <div class="button09">
             <a href="/post/index2">日報表示カレンダー形式</a>
         </div>
+        <div class="button09">
+            <a href="/post/page">日報表示エクセル形式</a>
+        </div>
     </div>
 </x-app>
 @stop

@@ -1,3 +1,8 @@
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content')
 <x-app>
     <x-slot name="header">
       <div class="flex items-center justify-between">
@@ -203,3 +208,5 @@
     </script>
 
 </x-app>
+
+@stop

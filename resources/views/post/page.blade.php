@@ -1,3 +1,9 @@
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +19,6 @@
     <link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" />
 </head>
 <body>
-    <a href="/"><img src="{{ asset('img/home.jpg') }}" alt=""></a><br>
     <div id="mytable" style="margin-left:100px"></div>
 
     <script>
@@ -58,11 +63,14 @@
             ]
         });
     </script>
-    <select id='columnNumber'>
-        <option value='3'>開始時間</option>
-        <option value='4'>終了時間</option>
-        <option value='7'>交通費</option>
-    </select>
-    <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
+    <div style="text-align: center">
+        <select id='columnNumber'>
+            <option value='3'>開始時間</option>
+            <option value='4'>終了時間</option>
+            <option value='7'>交通費</option>
+        </select>
+        <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
+    </div>
 </body>
 </html>
+@stop
