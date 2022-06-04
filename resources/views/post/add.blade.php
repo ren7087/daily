@@ -28,6 +28,17 @@
                 @enderror
               </div><br>
 
+              <div>
+                <label for="title">{{ ('場所') }}</label>
+                <input name="location" id="location" placeholder="八王子駅" required class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror">
+
+                @error('customer')
+                <div class="text-red-500 text-sm mt-2">
+                  {{ $message }}
+                </div>
+                @enderror
+              </div><br>
+
               <div id="input_pluralBox">
                 <div  id="input_plural">
                     <label for="product">{{ ('商品') }}</label>
@@ -70,25 +81,70 @@
                 <div style="display:inline-block" class="check">
                     <div>
                         <input type="checkbox" name="action[]" class="check" id="action1" value="打ち合わせ">
-                        <label for="release1" class="form-check-label">打ち合わせ</label>
+                        <label for="action1" class="form-check-label">打ち合わせ</label>
                     </div>
                     <div>
                         <input type="checkbox" name="action[]" class="check" id="action2" value="商談">
-                        <label for="release2" class="form-check-label">商談</label>
+                        <label for="action2" class="form-check-label">商談</label>
                     </div>
                 </div>
                 <div style="display:inline-block">
                     <div>
                         <input type="checkbox" name="action[]" class="check" id="action3" value="見積もり">
-                        <label for="release1" class="form-check-label">見積もり</label>
+                        <label for="action3" class="form-check-label">見積もり</label>
                     </div>
                     <div>
                         <input type="checkbox" name="action[]" class="check" id="action4" value="セミナー">
-                        <label for="release2" class="form-check-label">セミナー</label>
+                        <label for="action4" class="form-check-label">セミナー</label>
                     </div>
                 </div>
                 </label>
-              </div>
+              </div><br>
+
+              移動手段(1つ以上選択してください)
+              <div>
+                <div style="display:inline-block" class="check">
+                    <div>
+                        <input type="checkbox" name="transportation[]" class="check" id="transportation1" value="徒歩">
+                        <label for="transportation1" class="form-check-label">徒歩</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="transportation[]" class="check" id="transportation2" value="電車">
+                        <label for="transportation2" class="form-check-label">電車</label>
+                    </div>
+                </div>
+                <div style="display:inline-block" class="check">
+                    <div>
+                        <input type="checkbox" name="transportation[]" class="check" id="transportation3" value="車">
+                        <label for="transportation3" class="form-check-label">車</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="transportation[]" class="check" id="transportation4" value="タクシー">
+                        <label for="transportation4" class="form-check-label">タクシー</label>
+                    </div>
+                </div>
+                <div style="display:inline-block">
+                    <div>
+                        <input type="checkbox" name="transportation[]" class="check" id="transportation5" value="バス">
+                        <label for="transportation5" class="form-check-label">バス</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="transportation[]" class="check" id="transportation6" value="新幹線">
+                        <label for="transportation6" class="form-check-label">新幹線</label>
+                    </div>
+                </div>
+              </div><br>
+
+              <div>
+                <label for="title">{{ ('交通費') }}</label>
+                <input name="fee" id="fee" placeholder="1000円" required class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror">
+
+                @error('customer')
+                <div class="text-red-500 text-sm mt-2">
+                  {{ $message }}
+                </div>
+                @enderror
+              </div><br>
 
               <div class="mt-4">
                 <label for="content">{{ ('内容') }}</label>

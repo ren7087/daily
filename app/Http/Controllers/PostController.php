@@ -25,19 +25,29 @@ class PostController extends Controller
 
     public function store(TimeRequest $request)
     {
-        $input = $request->only('customer', 'product', 'start', 'end', 'action', 'content',  'comment');
+        $input = $request->only('customer', 'location', 'product', 'start', 'end', 'action', 'transportation', 'fee', 'content',  'comment');
 
         $post = new Post();
         $post->customer = $input["customer"];
+        $post->location = $input["location"];
         $post->product = implode(",", $input["product"]);
         $post->start = $_POST['date1']." ".$input["start"];
         $post->end = $_POST['date2']. " ".$input["end"];
         $post->action = implode("," , $_POST["action"]);
+        $post->transportation = implode("," , $_POST["transportation"]);
+        $post->fee = $input["fee"];
         $post->content = $input["content"];
         $post->comment = $input["comment"];
         $post->save();
 
         return redirect('/')->with('success', '日報を登録しました');
+    }
+
+    public function page(Request $request) {
+        $day = $request->input('target');
+        // $date = Post::whereDate('created_at', $day)->get();
+        $date = Post::get();
+        return view('post.page', compact("day", 'date'));
     }
 
     public function page2(Request $request) {

@@ -16,10 +16,13 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('customer');
+            $table->string('location');
             $table->string('product');
             $table->string('start');
             $table->string('end');
             $table->string('action');
+            $table->string('transportation');
+            $table->string('fee');
             $table->string('content');
             $table->string('comment')->nullable();
             $table->timestamps();

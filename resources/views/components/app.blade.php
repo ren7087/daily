@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
 </head>
 <body>
-  <a href="/"><img src="{{ asset('img/home.jpg') }}" alt=""></a>
   {{ $slot }}
 </body>
 </html>
