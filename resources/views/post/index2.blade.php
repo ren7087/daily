@@ -1,3 +1,8 @@
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content')
 <x-app>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -16,9 +21,10 @@
             </div>
         </form>
     </div>
+</x-app>
+@stop
 
-
-
+@section('js')
     <script>
         $('#datepicker').datepicker({
             altField: "#output",
@@ -32,7 +38,7 @@
             '7月','8月','9月','10月','11月','12月'],
             dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
             dayNamesShort: ['日','月','火','水','木','金','土'],
-              dayNamesMin: ['日','月','火','水','木','金','土'],
+            dayNamesMin: ['日','月','火','水','木','金','土'],
             weekHeader: '週',
             //yy/mm/dd か　yyyy/mm/dd か
             dateFormat: 'yy-mm-dd',
@@ -42,4 +48,6 @@
             yearSuffix: '年',
         });
     </script>
-</x-app>
+@stop
+
+

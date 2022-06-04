@@ -3,9 +3,8 @@
 @section('title', 'Dashboard')
 
 @section('content')
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +19,19 @@
 </head>
 <body>
     <div id="mytable" style="margin-left:100px"></div>
+    <div style="text-align: center">
+        <select id='columnNumber'>
+            <option value='3'>開始時間</option>
+            <option value='4'>終了時間</option>
+            <option value='7'>交通費</option>
+        </select>
+        <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
+    </div>
+</body>
+</html>
+@stop
 
+@section('js')
     <script>
         const day = @json($day);
         const date = @json($date);
@@ -28,15 +39,15 @@
         var spreadsheetdata = [
             @foreach ($date as $daily)
                 {"customer": `{!! nl2br(e($daily['customer'])) !!}`,
-                 "location":`{!! nl2br(e($daily['location'])) !!}`,
-                 "product":`{!! nl2br(e($daily['product'])) !!}`,
-                 "start":`{!! nl2br(e($daily['start'])) !!}`,
-                 "end":`{!! nl2br(e($daily['end'])) !!}`,
-                 "action":`{!! nl2br(e($daily['action'])) !!}`,
-                 "transportation":`{!! nl2br(e($daily['transportation'])) !!}`,
-                 "fee":`{!! nl2br(e($daily['fee'])) !!}`,
-                 "content":`{!! nl2br(e($daily['content'])) !!}`,
-                 "comment":`{!! nl2br(e($daily['comment'])) !!}`,
+                "location":`{!! nl2br(e($daily['location'])) !!}`,
+                "product":`{!! nl2br(e($daily['product'])) !!}`,
+                "start":`{!! nl2br(e($daily['start'])) !!}`,
+                "end":`{!! nl2br(e($daily['end'])) !!}`,
+                "action":`{!! nl2br(e($daily['action'])) !!}`,
+                "transportation":`{!! nl2br(e($daily['transportation'])) !!}`,
+                "fee":`{!! nl2br(e($daily['fee'])) !!}`,
+                "content":`{!! nl2br(e($daily['content'])) !!}`,
+                "comment":`{!! nl2br(e($daily['comment'])) !!}`,
                 },
             @endforeach
         ];
@@ -63,14 +74,4 @@
             ]
         });
     </script>
-    <div style="text-align: center">
-        <select id='columnNumber'>
-            <option value='3'>開始時間</option>
-            <option value='4'>終了時間</option>
-            <option value='7'>交通費</option>
-        </select>
-        <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
-    </div>
-</body>
-</html>
 @stop

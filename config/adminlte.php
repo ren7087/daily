@@ -256,7 +256,7 @@ return [
         ],
         [
             'text'        => 'カレンダー形式',
-            'url'         => 'post/page2',
+            'url'         => 'post/index2',
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
