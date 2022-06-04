@@ -21,10 +21,7 @@
             </div>
         </form>
     </div>
-</x-app>
-@stop
 
-@section('js')
     <script>
         $('#datepicker').datepicker({
             altField: "#output",
@@ -48,6 +45,5 @@
             yearSuffix: '年',
         });
     </script>
+</x-app>
 @stop
-
-
