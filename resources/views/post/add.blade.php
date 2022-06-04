@@ -15,7 +15,7 @@
                 @csrf
 
                 <div>
-                    <label for="title">{{ ('お客様') }}</label>
+                    <label for="customer">{{ ('お客様') }}</label>
                     <input name="customer" id="customer" autofocus required class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror">
 
                     @error('customer')
@@ -26,7 +26,7 @@
                 </div><br>
 
                 <div>
-                    <label for="title">{{ ('場所') }}</label>
+                    <label for="location">{{ ('場所') }}</label>
                     <input name="location" id="location" placeholder="八王子駅" required class="w-full rounded-lg border-2 bg-gray-100 @error('customer') border-red-500 @enderror">
 
                     @error('customer')
