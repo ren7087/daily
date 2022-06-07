@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" />
 </head>
 <body>
-    <div id="mytable" style="margin-left:100px"></div>
-    <div style="text-align: center">
+    <div>
         <select id='columnNumber'>
             <option value='3'>開始時間</option>
             <option value='4'>終了時間</option>
@@ -27,6 +26,7 @@
         </select>
         <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
     </div>
+    <div id="mytable" style="margin-left:100px"></div>
 </body>
 </html>
 @stop
@@ -59,16 +59,16 @@
             search: true,
             pagination: 10,
             tableOverflow: true,
-            tableWidth: "1400px",
+            tableWidth: "1650px",
             columns: [
-                { type: 'text',      title:'お客様',       width:120, readOnly:true },
-                { type: 'text',      title:'場所',         width:200, readOnly:true },
-                { type: 'text',      title:'商品',         width:200, readOnly:true  },
-                { type: 'text',      title:'開始時間',      width:200, readOnly:true},
-                { type: 'text',      title:'終了時間',      width:200, readOnly:true },
-                { type: 'text',      title:'行為',         width:250, readOnly:true },
-                { type: 'text',      title:'移動手段',      width:250, readOnly:true },
-                { type: 'text',      title:'交通費',       width:130 , readOnly:true},
+                { type: 'text',      title:'お客様',       width:120},
+                { type: 'text',      title:'場所',         width:200},
+                { type: 'text',      title:'商品',         width:200},
+                { type: 'text',      title:'開始時間',      width:200},
+                { type: 'text',      title:'終了時間',      width:200},
+                { type: 'text',      title:'行為',         width:250},
+                { type: 'text',      title:'移動手段',      width:250},
+                { type: 'text',      title:'交通費',       width:130},
                 { type: 'text',      title:'内容',         width:400 },
                 { type: 'text',      title:'感想',         width:400 },
             ]
