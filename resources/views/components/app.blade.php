@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ asset('css/table.css') }}">
   <link rel="stylesheet" href="{{ asset('css/button.css') }}">
   <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/template.css') }}">
 </head>
 <body>
   {{ $slot }}

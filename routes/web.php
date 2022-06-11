@@ -28,3 +28,8 @@ Route::post('/post/page', [PostController::class, 'page'])->name('post.page');
 
 Route::get('/post/page2', [PostController::class, 'page2'])->name('post.page2');
 Route::post('/post/page2', [PostController::class, 'page2'])->name('post.page2');
+
+Route::get('/post/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::post('/post/edit', [PostController::class, 'edit'])->name('post.edit');
+
+Route::get('/post/fee', [PostController::class, 'fee'])->name('post.fee');

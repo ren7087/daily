@@ -260,6 +260,13 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
+        ['header' => 'マネジメント'],
+        [
+            'text'        => '交通費管理',
+            'url'         => 'post/fee',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
