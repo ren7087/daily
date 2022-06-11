@@ -33,3 +33,13 @@ Route::get('/post/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::post('/post/edit', [PostController::class, 'edit'])->name('post.edit');
 
 Route::get('/post/fee', [PostController::class, 'fee'])->name('post.fee');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
