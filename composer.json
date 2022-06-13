@@ -9,6 +9,7 @@
         "barryvdh/laravel-debugbar": "^3.6",
         "guzzlehttp/guzzle": "^7.2",
         "jeroennoten/laravel-adminlte": "^3.8",
+        "laravel/fortify": "^1.13",
         "laravel/framework": "^9.11",
         "laravel/jetstream": "^2.8",
         "laravel/sanctum": "^2.14.1",
