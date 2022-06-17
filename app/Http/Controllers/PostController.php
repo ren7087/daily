@@ -62,37 +62,39 @@ class PostController extends Controller
         return view('post.fee', compact("fees"));
     }
 
-    // public function edit(TimeRequest $request){
+    // public function edit(Request $request){
     //     $textData = [];
     //     // $raw = file_get_contents('php://input'); // POSTされた生のデータを受け取る
     //     $data = $request->all();
-    //     // $data = json_decode($json);
+    //     // dd($data);
+    //     // $data = json_decode($data);
 
-    //     foreach ($data as $Data) {
-    //     $data [] = [
-    //         'id' => $Data['id'] ?? null,
-    //         'customer' => $Data['customer'],
-    //         'location' => $Data['locaion'],
-    //         'product' => $Data['product'],
-    //         'start' => $Data['start'],
-    //         'end' => $Data['end'],
-    //         'action' => $Data['action'],
-    //         'transportation' => $Data['transportation'],
-    //         'fee' => $Data['fee'],
-    //         'content' => $Data['content'],
-    //         'created_at' => $Data['created_at'],
-    //         'updated_at' => $Data['updated_at'],
-    //     ];
-    //     }
+    //     // foreach ($data as $Data) {
+    //     // $textData [] = [
+    //     //     'id' => $Data['id'] ?? null,
+    //     //     'customer' => $Data['customer'],
+    //     //     'location' => $Data['locaion'],
+    //     //     'product' => $Data['product'],
+    //     //     'start' => $Data['start'],
+    //     //     'end' => $Data['end'],
+    //     //     'action' => $Data['action'],
+    //     //     'transportation' => $Data['transportation'],
+    //     //     'fee' => $Data['fee'],
+    //     //     'content' => $Data['content'],
+    //     //     'created_at' => $Data['created_at'],
+    //     //     'updated_at' => $Data['updated_at'],
+    //     // ];
+    //     // }
 
-    //     // idが一致するレコードがあれば更新、無ければレコード作成する
-    //     Post::upsert($data, ['id']);
+    //     // // idが一致するレコードがあれば更新、無ければレコード作成する
+    //     // Post::upsert($data, ['id']);
+    //     return response()->json($data);
 
     // }
 
-    // public function edit(TimeRequest $request)
+    // public function edit(Request $request)
     // {
-    //     $Post = $this->Post->create([
+    //     $post = $this->Post->create([
     //         'id' => $request->post('name') ?? null,
     //         'customer' => $request->post('customer'),
     //         'location' => $request->post('location'),
@@ -106,17 +108,44 @@ class PostController extends Controller
     //         'created_at' => $request->post('created_at'),
     //         'updated_at' => $request->post('updated_at'),
     //      ]);
+    //      $post->save();
 
-    //     return response()->json(['status'=>true,'message'=>'Post created　successfully','data'=>$Post]);
+    //     return response()->json($post);
     // }
 
-    public function edit(TimeRequest $request)
-    {
-        // $data = ["id"=>"1","customer"=>"吉田です","location"=>"八王子駅","product"=>"テレビ","start"=>"2022-06-04 17:00","end"=>"2022-06-04 18:00","action"=>"打ち合わせ","transportation"=>"電車","fee"=>"1000円","content"=>"これはtestですこれはtestですこれはtestです","comment"=>"これはtestですこれはtestです"];
+    // public function edit(TimeRequest $request)
+    // {
+    //     $data = ["id"=>"1","customer"=>"吉田です","location"=>"八王子駅","product"=>"テレビ","start"=>"2022-06-04 17:00","end"=>"2022-06-04 18:00","action"=>"打ち合わせ","transportation"=>"電車","fee"=>"1000円","content"=>"これはtestですこれはtestですこれはtestです","comment"=>"これはtestですこれはtestです"];
+    //     // $data = $request->all();
+    //     // $post = new Post();
+    //     // $post->data = $data;
+    //     // $post->save();
+    //     // return response()->json($post);
+    //     return response()->json($data);
+    // }
+
+    public function edit(Request $request){
+        $textData = [];
         $data = $request->all();
-        $post = new Post();
-        $post->data = $data;
-        $post->save();
+        foreach ($data as $Data) {
+        $textData[] = [
+            'id' => $Data['id'] ?? null,
+            'customer' => $Data['customer'],
+            'location' => $Data['locaion'],
+            'product' => $Data['product'],
+            'start' => $Data['start'],
+            'end' => $Data['end'],
+            'action' => $Data['action'],
+            'transportation' => $Data['transportation'],
+            'fee' => $Data['fee'],
+            'content' => $Data['content'],
+            'created_at' => $Data['created_at'],
+            'updated_at' => $Data['updated_at'],
+        ];
+        }
+        Post::upsert($textData, ['id']);
+        return response()->json($textData);
+
     }
 
 

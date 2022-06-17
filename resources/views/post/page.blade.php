@@ -47,7 +47,6 @@
         var spreadsheetdata = [
             @foreach ($date as $daily)
                 {
-                "check": `true`,
                 "id": `{!! nl2br(e($daily['id'])) !!}`,
                 "customer": `{!! nl2br(e($daily['customer'])) !!}`,
                 "location":`{!! nl2br(e($daily['location'])) !!}`,
@@ -70,9 +69,8 @@
             search: true,
             pagination: 10,
             tableOverflow: true,
-            tableWidth: "1650px",
+            tableWidth: "auto",
             columns: [
-                { type: 'checkbox',  title:'チェック',       width:120},
                 { type: 'text',      title:'id',       width:120},
                 { type: 'text',      title:'お客様',       width:120},
                 { type: 'text',      title:'場所',         width:200},
