@@ -282,7 +282,7 @@ return [
         [
             'text'       => 'スケジュール登録',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => 'sucheduleadd',
         ],
         [
             'text'       => 'スケジュール確認',
