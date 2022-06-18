@@ -45,7 +45,7 @@
                     </div>
                     <div class="modal-body">
 
-                            {{ csrf_field() }}
+                            @csrf
                             <div class="form-group row">
                                 <p class="col-sm-4 col-form-label">開始時間<span class="badge badge-danger ml-1">必須</span></p>
                                 <div class="col-sm-8">
@@ -80,7 +80,7 @@
 
                             <div class="text-center">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">修正する</button>
-                                {{ Form::submit('送信', ['name' => 'submit', 'class' => 'btn btn-primary']) }}
+                                <button type="button" class="btn btn-secondary" style="background-color: red" data-dismiss="modal">送信する</button>
                             </div>
 
                     </div>
