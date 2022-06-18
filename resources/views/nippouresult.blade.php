@@ -6,59 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>お問い合わせ</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {{-- <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}"> --}}
 </head>
 <body>
+    <h2>営業結果登録</h2>
     <div class="container">
-        <h1 class="text-center mt-2 mb-5">お問い合わせ</h1>
-        <div class="container">
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">お名前（全角10文字以内）<span class="badge badge-danger ml-1">必須</span></p>
-                <div class="col-sm-8">
-                    {{ Form::text('name', null, ['class' => 'form-control']) }}
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">メールアドレス<span class="badge badge-danger ml-1">必須</span></p>
-                <div class="col-sm-8">
-                    {{ Form::text('email', null, ['class' => 'form-control']) }}
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">電話番号</p>
-                <div class="col-sm-8">
-                    {{ Form::text('tel', null, ['class' => 'form-control']) }}
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">性別<span class="badge badge-danger ml-1">必須</span></p>
-                <div class="col-sm-8">
-                    <label>{{ Form::radio('gender', "男性") }}男性</label>
-                    <label>{{ Form::radio('gender', "女性") }}女性</label>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">選択（複数選択可）<span class="badge badge-danger ml-1">必須</span></p>
-                <div class="col-sm-8">
-                    <label>{{ Form::checkbox('checkbox', "選択肢１") }}選択肢１</label>
-                    <label>{{ Form::checkbox('checkbox', "選択肢２") }}選択肢２</label>
-                    <label>{{ Form::checkbox('checkbox', "選択肢３") }}選択肢３</label>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <p class="col-sm-4 col-form-label">お問い合わせ内容<span class="badge badge-danger ml-1">必須</span></p>
-                <div class="col-sm-8">
-                    {{ Form::textarea('contents', null, ['class' => 'form-control']) }}
-                </div>
+        <div class="container" style="display: flex">
+            <div>
+                <p>開始時間</p>
+                <select name="month">
+                    <option value="jan">10:00</option>
+                    <option value="feb">12:00</option>
+                    <option value="mar">14:00</option>
+                    <option value="apr">16:00</option>
+                    <option value="may">18:00</option>
+                    <option value="jun">20:00</option>
+                    <option value="jul">22:00</option>
+                    <option value="aug">24:00</option>
+                    </select>
             </div>
 
             <div class="text-center">
                 <button type="button" class="btn btn-primary form-btn" data-toggle="modal" data-target="#exampleModalCenter">
-                    確認画面へ
+                    登録する
                 </button>
             </div>
         </div>
@@ -68,7 +38,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">確認画面</h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">営業結果登録</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -77,50 +47,34 @@
 
                             {{ csrf_field() }}
                             <div class="form-group row">
-                                <p class="col-sm-4 col-form-label">お名前（全角10文字以内）<span class="badge badge-danger ml-1">必須</span></p>
+                                <p class="col-sm-4 col-form-label">開始時間<span class="badge badge-danger ml-1">必須</span></p>
                                 <div class="col-sm-8">
                                     <p class="modal-name"></p>
-                                    <input class="modal-name" type="hidden" name="name" value="">
+                                    <input class="modal-name" type="text" name="name" value="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <p class="col-sm-4 col-form-label">メールアドレス<span class="badge badge-danger ml-1">必須</span></p>
+                                <p class="col-sm-4 col-form-label">終了時間<span class="badge badge-danger ml-1">必須</span></p>
                                 <div class="col-sm-8">
                                     <p class="modal-email"></p>
-                                    <input class="modal-email" type="hidden" name="email" value="">
+                                    <input class="modal-email" type="text" name="email" value="">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <p class="col-sm-4 col-form-label">電話番号</p>
-                                <div class="col-sm-8">
-                                    <p class="modal-tel"></p>
-                                    <input class="modal-tel" type="hidden" name="tel" value="">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <p class="col-sm-4 col-form-label">性別<span class="badge badge-danger ml-1">必須</span></p>
-                                <div class="col-sm-8">
-                                    <p class="modal-gender"></p>
-                                    <input class="modal-gender" type="hidden" name="gender" value="">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <p class="col-sm-4 col-form-label">選択（複数選択可）<span class="badge badge-danger ml-1">必須</span></p>
-                                <div class="col-sm-8">
-                                    <p class="modal-checkbox"></p>
-                                    <input class="modal-checkbox" type="hidden" name="checkbox" value="">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <p class="col-sm-4 col-form-label">お問い合わせ内容<span class="badge badge-danger ml-1">必須</span></p>
+                                <p class="col-sm-4 col-form-label">内容<span class="badge badge-danger ml-1">必須</span></p>
                                 <div class="col-sm-8">
                                     <p class="modal-contents"></p>
-                                    <input class="modal-contents" type="hidden" name="contents" value="">
+                                    <textarea name="comment" id="comment" cols="30" rows="4"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <p class="col-sm-4 col-form-label">感想<span class="badge badge-danger ml-1">必須</span></p>
+                                <div class="col-sm-8">
+                                    <p class="modal-contents"></p>
+                                    <textarea name="comment" id="comment" cols="30" rows="4"></textarea>
                                 </div>
                             </div>
 
@@ -144,7 +98,7 @@
 </html>
 
 <script>
-    windowOpen()
+    // windowOpen()
     // alert("このデータを登録しますか？ \n https://○○○○○○○.com");
     function windowOpen(){
         window.open('https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8', null ,'top=100,left=100,width=400,height=300');
