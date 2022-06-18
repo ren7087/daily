@@ -302,7 +302,7 @@ return [
         [
             'text'       => '商品売り込みリスト',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => 'productlist',
         ],
         [
             'text'       => '商品登録',
