@@ -287,7 +287,7 @@ return [
         [
             'text'       => 'スケジュール確認',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => 'suchedulelist',
         ],
         [
             'text'       => '営業結果登録',
