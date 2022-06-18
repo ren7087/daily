@@ -26,6 +26,10 @@ Route::get('/suchedulelist', function () {
     return view('suchedulelist');
 });
 
+Route::get('/nippouresult', function () {
+    return view('nippouresult');
+});
+
 Route::get('/post/index2', [PostController::class, 'index2'])->name('post.index2');
 
 Route::get('/post/add', [PostController::class, 'add'])->name('post.add');

@@ -292,7 +292,7 @@ return [
         [
             'text'       => '営業結果登録',
             'icon_color' => 'cyan',
-            'url'        => '#',
+            'url'        => 'nippouresult',
         ],
         [
             'text'       => '営業日報確認',
