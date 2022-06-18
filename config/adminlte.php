@@ -307,7 +307,7 @@ return [
         [
             'text'       => '商品登録',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => 'productadd',
         ],
         [
             'text'       => '交通費管理',
