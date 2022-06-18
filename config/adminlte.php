@@ -297,7 +297,7 @@ return [
         [
             'text'       => '営業日報確認',
             'icon_color' => 'cyan',
-            'url'        => '#',
+            'url'        => 'nippoulist',
         ],
         [
             'text'       => '商品売り込みリスト',
