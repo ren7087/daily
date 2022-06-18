@@ -13,8 +13,16 @@
 
     <link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" />
     <link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" />
+
+    <link rel="stylesheet" href="{{ asset('css/serch.css') }}">
 </head>
 <body>
+    <div class="container">
+        <div class="search royalblue">
+          <input type="text">
+          <button type="submit">送信</button>
+        </div>
+    </div>
     <div>
         <select id='columnNumber'>
             <option value='4'>開始時間</option>

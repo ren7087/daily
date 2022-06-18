@@ -42,6 +42,10 @@ Route::get('/productadd', function () {
     return view('productadd');
 });
 
+Route::get('/feelist', function () {
+    return view('feelist');
+});
+
 Route::get('/post/index2', [PostController::class, 'index2'])->name('post.index2');
 
 Route::get('/post/add', [PostController::class, 'add'])->name('post.add');

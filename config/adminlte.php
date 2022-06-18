@@ -312,7 +312,7 @@ return [
         [
             'text'       => '交通費管理',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => 'feelist',
         ],
     ],
 
