@@ -57,6 +57,11 @@ class PostController extends Controller
         return view('post.page2', compact("day", 'date'));
     }
 
+    public function hundsontable() {
+        $date = Post::get();
+        return view('post.hundsontable', compact('date'));
+    }
+
     public function fee(){
         $fees = Post::selectRaw('SUM(fee) as max_price')->first();
         return view('post.fee', compact("fees"));

@@ -46,21 +46,20 @@ Route::get('/feelist', function () {
     return view('feelist');
 });
 
-Route::get('/post/index2', [PostController::class, 'index2'])->name('post.index2');
+Route::prefix('post')->group(function () {
+    Route::get('index2', [PostController::class, 'index2'])->name('post.index2');
+    Route::get('add', [PostController::class, 'add'])->name('post.add');
+    Route::post('store', [PostController::class, 'store'])->name('post.store');
+    Route::get('page', [PostController::class, 'page'])->name('post.page');
+    Route::post('page', [PostController::class, 'page'])->name('post.page');
+    Route::get('page2', [PostController::class, 'page2'])->name('post.page2');
+    Route::post('page2', [PostController::class, 'page2'])->name('post.page2');
+    Route::get('edit', [PostController::class, 'edit'])->name('post.edit');
+    Route::post('edit', [PostController::class, 'edit'])->name('post.edit');
+    Route::get('fee', [PostController::class, 'fee'])->name('post.fee');
 
-Route::get('/post/add', [PostController::class, 'add'])->name('post.add');
-Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
-
-Route::get('/post/page', [PostController::class, 'page'])->name('post.page');
-Route::post('/post/page', [PostController::class, 'page'])->name('post.page');
-
-Route::get('/post/page2', [PostController::class, 'page2'])->name('post.page2');
-Route::post('/post/page2', [PostController::class, 'page2'])->name('post.page2');
-
-Route::get('/post/edit', [PostController::class, 'edit'])->name('post.edit');
-Route::post('/post/edit', [PostController::class, 'edit'])->name('post.edit');
-
-Route::get('/post/fee', [PostController::class, 'fee'])->name('post.fee');
+    Route::get('hundsontable', [PostController::class, 'hundsontable'])->name('post.hundsontable');
+});
 
 Route::middleware([
     'auth:sanctum',

@@ -249,8 +249,14 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'エクセル形式',
+            'text'        => 'エクセル形式(jexcel)',
             'url'         => 'post/page',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'エクセル形式(hundsontable)',
+            'url'         => 'post/hundsontable',
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
