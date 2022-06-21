@@ -27,11 +27,12 @@
             <option value='8'>交通費</option>
         </select>
         <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
-    </div>
+    </div><br />
+    <h2>範囲選択して「command+sボタン」でcsv出力ができます</h2>
     <div id="mytable" style="margin-left:20px"></div>
     <div class="container">
         <div class="page-header">
-          <button id="btn">save</button>
+          <button id="btn">json出力</button>
         </div>
     </div>
     <textarea id='saveData' style='width:800px;height:300px;'></textarea>
