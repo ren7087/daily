@@ -19,7 +19,9 @@
 </head>
 <body>
     <div id="example" class="handsontable"></div>
-
+    <div class="controls">
+        <button id="export-file">Download CSV</button>
+    </div>
 
     <script>
         $(document).ready(function () {
@@ -52,6 +54,24 @@
             contextMenu: true,
             manualColumnResize: true,
           });
+
+          const exportPlugin = hot.getPlugin('exportFile');
+          const button = document.querySelector('#export-file');
+
+            button.addEventListener('click', () => {
+            exportPlugin.downloadFile('csv', {
+                bom: false,
+                columnDelimiter: ',',
+                columnHeaders: false,
+                exportHiddenColumns: true,
+                exportHiddenRows: true,
+                fileExtension: 'csv',
+                filename: 'Handsontable-CSV-file_[YYYY]-[MM]-[DD]',
+                mimeType: 'text/csv',
+                rowDelimiter: '\r\n',
+                rowHeaders: true
+            });
+            });
 
 
           function bindDumpButton() {
