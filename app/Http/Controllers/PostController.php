@@ -59,7 +59,7 @@ class PostController extends Controller
 
     public function hundsontable() {
         $date = Post::get();
-        return view('post.hundsontable', compact('date'));
+        return view('post.hundsontable', compact("date"));
     }
 
     public function fee(){

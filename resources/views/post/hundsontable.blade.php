@@ -18,6 +18,7 @@
     <script src="{{ asset('/js/jquery-1.11.1.min.js') }}"></script>
 </head>
 <body>
+    <h3>変更すると差分が`console`で表示されます</h3>
     <div id="example" class="handsontable"></div>
     <div class="controls">
         <button id="export-file">Download CSV</button>
@@ -48,11 +49,25 @@
 
           hot = new Handsontable(container, {
             data: data,
-            colHeaders: ["id", 'お客様', '場所', '商品', '開始時間', '終了時間', '行為', '移動手段', '交通費', '内容', '感想'],
+            colHeaders: ['id', 'お客様', '場所', '商品', '開始時間', '終了時間', '行為', '移動手段', '交通費', '内容', '感想'],
             minSpareRows: 1,
-            colHeaders: true,
             contextMenu: true,
             manualColumnResize: true,
+            manualRowResize: true,
+            columnSorting: true,
+            sortIndicator: true,
+            comments: true,
+            mergeCells: true,
+            licenseKey: 'non-commercial-and-evaluation',
+            afterChange : function(changes,source) {
+                console.log("Changes:", changes, source);
+                if (changes) {
+                    changes.forEach(function(change) {
+                        var test = hot.getCellMeta(change[0],change[1]);
+                        console.log(test.id, test); // 'id' is the property you've added earlier with setMeta
+                    });
+                }
+            }
           });
 
           const exportPlugin = hot.getPlugin('exportFile');
