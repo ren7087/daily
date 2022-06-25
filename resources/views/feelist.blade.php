@@ -23,14 +23,6 @@
           <button type="submit">送信</button>
         </div>
     </div>
-    <div>
-        <select id='columnNumber'>
-            <option value='4'>開始時間</option>
-            <option value='5'>終了時間</option>
-            <option value='8'>交通費</option>
-        </select>
-        <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
-    </div><br />
 
 
     <div id="mytable" style="margin-left:20px"><p style="color: red">田中太郎</p></div>

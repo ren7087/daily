@@ -261,6 +261,12 @@ return [
             'label_color' => 'success',
         ],
         [
+            'text'        => 'エクセル形式(hundsonjson)',
+            'url'         => 'post/hundsonjson',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
             'text'        => 'カレンダー形式',
             'url'         => 'post/index2',
             'icon'        => 'far fa-fw fa-file',

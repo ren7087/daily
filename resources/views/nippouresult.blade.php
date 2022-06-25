@@ -7,13 +7,14 @@
     <title>お問い合わせ</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     {{-- <link rel="stylesheet" href="{{ asset('css/dropdown.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/backimage.css') }}">
 </head>
 <body>
-    <h2>営業結果登録</h2>
-    <div class="container">
-        <div class="container" style="display: flex">
-            <div>
-                <p>開始時間</p>
+    <div class="container" style="margin-top: 200px;">
+        <div class="container">
+            <div style="text-align: center">
+                <h2 style="color: white">営業結果登録</h2><br />
+                <p style="color: white">開始時間</p>
                 <select name="month">
                     <option value="jan">10:00</option>
                     <option value="feb">12:00</option>
@@ -23,10 +24,10 @@
                     <option value="jun">20:00</option>
                     <option value="jul">22:00</option>
                     <option value="aug">24:00</option>
-                    </select>
+                </select>
             </div>
 
-            <div class="text-center">
+            <div class="text-center" style="margin: auto">
                 <button type="button" class="btn btn-primary form-btn" data-toggle="modal" data-target="#exampleModalCenter">
                     登録する
                 </button>

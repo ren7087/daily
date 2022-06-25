@@ -28,11 +28,15 @@
         </select>
         <input type='button' value='ソートする' onclick="sheet.orderBy(document.getElementById('columnNumber').value)">
     </div><br />
-    <h2>範囲選択して「command+sボタン」でcsv出力ができます</h2>
+    <p>範囲選択して「command+sボタン」もしくは「ダウンロードボタン」でcsv出力ができます</p><br />
+    <p>「json出力ボタン」で、変更した差分も含めた最新のjsonファイルが生成/上書きされる</p><br />
+    <p>「インポートボタン」で、最新のjsonファイルの内容がdbに登録されるようにしたい</p><br />
     <div id="mytable" style="margin-left:20px"></div>
     <div class="container">
         <div class="page-header">
           <button id="btn">json出力</button>
+          <button id="download">ダウンロード</button>
+          <button id="load">インポート</button><br/>
         </div>
     </div>
     <textarea id='saveData' style='width:800px;height:300px;'></textarea>
@@ -112,5 +116,37 @@
             });
             })
         });
+    </script>
+    <script>
+        const download = document.getElementById('download');
+        download.addEventListener('click', () => {
+            sheet.download();
+        })
+
+        const load = document.getElementById('load');
+        load.addEventListener('click', () => {
+            jexcel(document.getElementById('mytable'), {
+                url:'/public/nippou.json',
+
+                // data: spreadsheetdata,
+                // search: true,
+                // pagination: 10,
+                // tableOverflow: true,
+                // tableWidth: "auto",
+                columns: [
+                    { type: 'text',      title:'id',       width:120},
+                    { type: 'text',      title:'お客様',       width:120},
+                    { type: 'text',      title:'場所',         width:200},
+                    { type: 'text',      title:'商品',         width:200},
+                    { type: 'text',      title:'開始時間',      width:200},
+                    { type: 'text',      title:'終了時間',      width:200},
+                    { type: 'text',      title:'行為',         width:250},
+                    { type: 'text',      title:'移動手段',      width:250},
+                    { type: 'text',      title:'交通費',       width:130},
+                    { type: 'text',      title:'内容',         width:400 },
+                    { type: 'text',      title:'感想',         width:400 },
+                ]
+            });
+        })
     </script>
 @stop

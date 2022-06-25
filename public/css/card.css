@@ -6,6 +6,32 @@
     margin:20px;
 }
 
+.licard.badge1::before {
+    position: absolute;
+    line-height: 50px;
+    box-shadow: 0 0 5px #333;
+    border-radius: 50%;
+    background: blue;
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    content: '売り込み';
+}
+
+.licard.badge2::before {
+    position: absolute;
+    line-height: 50px;
+    box-shadow: 0 0 5px #333;
+    border-radius: 50%;
+    background: rgba(243, 231, 4, 0.671);
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    content: '返事待ち';
+}
+
 .licard_img{
     width:30%;
     object-fit:cover;

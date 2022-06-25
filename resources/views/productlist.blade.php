@@ -20,7 +20,7 @@
         </div>
     </div>
     <div style="display: flex; justify-content:center; flex-wrap: wrap;">
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/rady.png') }}" alt="">
             </div>
@@ -29,7 +29,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge2">
             <div class="licard_img">
                 <img src="{{ asset('img/boy.png') }}" alt="">
             </div>
@@ -38,7 +38,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/rady2.png') }}" alt="">
             </div>
@@ -47,7 +47,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge2">
             <div class="licard_img">
                 <img src="{{ asset('img/boy.png') }}" alt="">
             </div>
@@ -56,7 +56,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/boy.png') }}" alt="">
             </div>
@@ -65,7 +65,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/rady3.png') }}" alt="">
             </div>
@@ -74,7 +74,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/rady.png') }}" alt="">
             </div>
@@ -83,7 +83,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge2">
             <div class="licard_img">
                 <img src="{{ asset('img/boy.png') }}" alt="">
             </div>
@@ -92,7 +92,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/boy.png') }}" alt="">
             </div>
@@ -101,7 +101,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge2">
             <div class="licard_img">
                 <img src="{{ asset('img/boy2.png') }}" alt="">
             </div>
@@ -110,7 +110,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/rady3.png') }}" alt="">
             </div>
@@ -119,7 +119,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge2">
             <div class="licard_img">
                 <img src="{{ asset('img/boy.png') }}" alt="">
             </div>
@@ -128,7 +128,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/boy3.png') }}" alt="">
             </div>
@@ -137,7 +137,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge2">
             <div class="licard_img">
                 <img src="{{ asset('img/rady.png') }}" alt="">
             </div>
@@ -146,7 +146,7 @@
                 <h4>状況 : 売り込み中</h4>
             </div>
         </div>
-        <div class="licard">
+        <div class="licard badge1">
             <div class="licard_img">
                 <img src="{{ asset('img/rady2.png') }}" alt="">
             </div>

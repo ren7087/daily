@@ -62,6 +62,11 @@ class PostController extends Controller
         return view('post.hundsontable', compact("date"));
     }
 
+    public function hundsonjson() {
+        $date = Post::get();
+        return view('post.hundsonjson', compact("date"));
+    }
+
     public function fee(){
         $fees = Post::selectRaw('SUM(fee) as max_price')->first();
         return view('post.fee', compact("fees"));
@@ -129,29 +134,62 @@ class PostController extends Controller
     //     return response()->json($data);
     // }
 
-    public function edit(Request $request){
-        $textData = [];
-        $data = $request->all();
-        foreach ($data as $Data) {
-        $textData[] = [
-            'id' => $Data['id'] ?? null,
-            'customer' => $Data['customer'],
-            'location' => $Data['locaion'],
-            'product' => $Data['product'],
-            'start' => $Data['start'],
-            'end' => $Data['end'],
-            'action' => $Data['action'],
-            'transportation' => $Data['transportation'],
-            'fee' => $Data['fee'],
-            'content' => $Data['content'],
-            'created_at' => $Data['created_at'],
-            'updated_at' => $Data['updated_at'],
-        ];
-        }
-        Post::upsert($textData, ['id']);
-        return response()->json($textData);
+    // public function edit(Request $request){
+    //     $textData = [];
+    //     $data = $request->all();
+    //     foreach ($data as $Data) {
+    //     $textData[] = [
+    //         'id' => $Data['id'] ?? null,
+    //         'customer' => $Data['customer'],
+    //         'location' => $Data['locaion'],
+    //         'product' => $Data['product'],
+    //         'start' => $Data['start'],
+    //         'end' => $Data['end'],
+    //         'action' => $Data['action'],
+    //         'transportation' => $Data['transportation'],
+    //         'fee' => $Data['fee'],
+    //         'content' => $Data['content'],
+    //         'created_at' => $Data['created_at'],
+    //         'updated_at' => $Data['updated_at'],
+    //     ];
+    //     }
+    //     Post::upsert($textData, ['id']);
+    //     return response()->json($textData);
+    // }
 
+    // public function edit(Request $request)
+    // {
+    // $data = $request->get('data');
+    // // Biasakan untuk selalu membungkus dengan transaction jika melakukan insert/update/delete beberapa query sekaligus
+    // DB::transaction(function () use ($data) {
+
+    //     // hapus data
+    //     $ids = collect($data)->pluck('id');
+    //     if (!empty($ids)) {
+    //     Post::whereNotIn('id', $ids)->delete();
+    //     }
+
+    //     foreach ($data as $row) {
+    //     if ($row['id']) {
+    //         // update existing data
+    //         Post::whereId($row['id'])->update($row);
+    //     } else {
+    //         // insert data baru
+    //         Post::create($row);
+    //     }
+    //     }
+    // });
+    // return redirect()->back()->withSuccess(sprintf("Berhasil menyimpan %d data mobil", count($data)));
+    // }
+
+    public function edit()
+    {
+        $handle = fopen('./nippou.json', 'w');
+        $params = file_get_contents('php://input');
+        fwrite($handle, $params);
+        fclose($handle);
     }
+
 
 
 }

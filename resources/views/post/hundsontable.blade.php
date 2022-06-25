@@ -108,5 +108,23 @@
         });
     </script>
 
+<?php
+/*
+    $details = array();
+    try {
+        $pdo = new PDO ('mysql:host=localhost;dbname=work', 'waka1222', 'password123');
+        $con = true;
+    } catch (PDOException $e) {
+        $con = false;
+        echo "データベース接続失敗";
+    }
+    if ($con === true) {
+        $sql = "UPDATE posts set カラム名 = 値 where 条件";
+        $results = $pdo->query($sql);
+    }
+*/
+?>
+
+
 </body>
 @stop
