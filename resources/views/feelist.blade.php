@@ -53,7 +53,6 @@
     var sheet = jexcel(table, {
         data: spreadsheetdata,
         search: true,
-        pagination: 10,
         tableOverflow: true,
         tableWidth: "auto",
         columns: [
@@ -96,7 +95,6 @@
     var sheet = jexcel(table2, {
         data: spreadsheetdata,
         search: true,
-        pagination: 10,
         tableOverflow: true,
         tableWidth: "auto",
         columns: [
@@ -139,7 +137,6 @@
     var sheet = jexcel(table3, {
         data: spreadsheetdata,
         search: true,
-        pagination: 10,
         tableOverflow: true,
         tableWidth: "auto",
         columns: [

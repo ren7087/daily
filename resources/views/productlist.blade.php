@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/serch.css') }}">
     <link rel="stylesheet" href="{{ asset('css/button.css') }}">
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
 </head>
 <body>
     <div class="container">
@@ -18,6 +19,14 @@
         <div class="button005">
             <a href="#">Add New</a>
         </div>
+    </div>
+    <div class="nav">
+        <ul class="top-banner">
+            <li><a href="リンク先のURL"><img src="{{ asset('img/nav/reply.jpg') }}" alt=""></a><p>売り込み中</p></li>
+            <li><a href="リンク先のURL"><img src="{{ asset('img/nav/reply.jpg') }}" alt=""></a><p>商談中</p></li>
+            <li><a href="リンク先のURL"><img src="{{ asset('img/nav/reply.jpg') }}" alt=""></a><p>契約</p></li>
+            <li><a href="リンク先のURL"><img src="{{ asset('img/nav/reply.jpg') }}" alt=""></a><p>返事待ち</p></li>
+        </ul>
     </div>
     <div style="display: flex; justify-content:center; flex-wrap: wrap;">
         <div class="licard badge1">

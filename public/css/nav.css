@@ -1,0 +1,18 @@
+.nav{
+    display: flex;
+    justify-content: center;
+}
+.top-banner{
+	display: flex;
+	flex-wrap:wrap;
+}
+.top-banner li {
+    list-style-type: none;
+	width: calc(100%/4);/*←画像を横に4つ並べる場合*/
+	padding:0 5px;/*←画像の左右に5pxの余白を入れる場合*/
+	box-sizing:border-box;
+}
+.top-banner li img {
+	max-width:100%; /*画像のはみだしを防ぐ*/
+	height: auto; /*画像の縦横比を維持 */
+}
