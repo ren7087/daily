@@ -17,7 +17,7 @@
           <button type="submit">送信</button>
         </div>
         <div class="button005">
-            <a href="#">Add New</a>
+            <a href="/productadd">Add New</a>
         </div>
     </div>
     <div class="nav">

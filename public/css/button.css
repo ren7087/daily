@@ -55,8 +55,8 @@
     color: #FFF;
     transition: 0.3s ease-in-out;
     font-weight: 600;
-    background: rgb(149,202,252);
-    background: linear-gradient(270deg, rgba(149,202,252,1) 0%, rgba(107,182,255,1) 100%);
+    background: rgb(53, 149, 238);
+    background: linear-gradient(270deg, rgb(96, 170, 239) 0%, rgb(30, 137, 245) 100%);
 }
 .button005 a:hover {
     background: rgb(117,188,255);

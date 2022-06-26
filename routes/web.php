@@ -60,6 +60,7 @@ Route::prefix('post')->group(function () {
 
     Route::get('hundsontable', [PostController::class, 'hundsontable'])->name('post.hundsontable');
     Route::get('hundsonjson', [PostController::class, 'hundsonjson'])->name('post.hundsonjson');
+    Route::get('tabulator', [PostController::class, 'tabulator'])->name('post.tabulator');
 });
 
 Route::middleware([

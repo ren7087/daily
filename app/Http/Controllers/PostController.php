@@ -62,6 +62,12 @@ class PostController extends Controller
         return view('post.hundsontable', compact("date"));
     }
 
+    public function tabulator()
+    {
+        $date = Post::get();
+        return view('post.tabulator', compact("date"));
+    }
+
     public function hundsonjson() {
         $date = Post::get();
         return view('post.hundsonjson', compact("date"));

@@ -7,7 +7,7 @@
         <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div style="text-align:center" class="title">
-                <h3>{{ $today }}</h3><h3>担当者 : 田中太郎</h3><br />
+                <h3>{{ $today }}　担当者 : 田中太郎</h3><br />
             </div>
 
             <div class="Form">
