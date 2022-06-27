@@ -10,6 +10,12 @@ use App\Http\Requests\TimeRequest;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('auth')->except(['index2']);
+        $this->middleware('auth');
+    }
+
     public function index2() {
         $time = new Carbon(Carbon::now());
         $today = $time->format('Y-m-d');
