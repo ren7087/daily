@@ -30,12 +30,12 @@
     </div><br />
     <p>範囲選択して「command+sボタン」もしくは「ダウンロードボタン」でcsv出力ができます</p><br />
     <p>「json出力ボタン」で、変更した差分も含めた最新のjsonファイルが生成/上書きされる</p><br />
-    <p>「インポートボタン」で、最新のjsonファイルの内容がdbに登録されるようにしたい</p><br />
+    <p>json最新ファイルが読み込まれるので、現状だとdbの内容と差分が生じてしまう</p>
     <div id="mytable" style="margin-left:20px"></div>
     <div class="container">
         <div class="page-header">
           <button id="btn">json出力</button>
-          <button id="download">ダウンロード</button>
+          <button id="download">csv出力</button>
           <button id="load">インポート</button><br/>
         </div>
     </div>

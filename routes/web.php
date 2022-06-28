@@ -62,6 +62,27 @@ Route::prefix('post')->group(function () {
     Route::get('tabulator', [PostController::class, 'tabulator'])->name('post.tabulator');
 });
 
+Route::group(['middleware' => 'basicauth'], function() {
+    Route::get('/', function () {
+        return view('index');
+    });
+    Route::prefix('post')->group(function () {
+        Route::get('index2', [PostController::class, 'index2'])->name('post.index2');
+        Route::get('add', [PostController::class, 'add'])->name('post.add');
+        Route::post('store', [PostController::class, 'store'])->name('post.store');
+        Route::get('page', [PostController::class, 'page'])->name('post.page');
+        Route::post('page', [PostController::class, 'page'])->name('post.page');
+        Route::get('page2', [PostController::class, 'page2'])->name('post.page2');
+        Route::post('page2', [PostController::class, 'page2'])->name('post.page2');
+        Route::get('edit', [PostController::class, 'edit'])->name('post.edit');
+        Route::post('edit', [PostController::class, 'edit'])->name('post.edit');
+        Route::get('fee', [PostController::class, 'fee'])->name('post.fee');
+
+        Route::get('hundsontable', [PostController::class, 'hundsontable'])->name('post.hundsontable');
+        Route::get('tabulator', [PostController::class, 'tabulator'])->name('post.tabulator');
+    });
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
