@@ -11,7 +11,7 @@
     <div style="text-align:center">
         <h2>担当者名 : 田中太郎</h2><br><br>
 
-        <form action="{{ route('post.page2') }}" method="POST">
+        <form action="{{ route('post.calendar') }}" method="POST">
             @csrf
             <div class="mt-4">
                 {{-- <div id="datepicker" style="margin-left:570px"></div><br> --}}

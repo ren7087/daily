@@ -46,7 +46,7 @@
                     <div class="modal-body">
                         @csrf
                         <div class="form-group row">
-                            <p class="col-sm-4 col-form-label">内容<span class="badge badge-danger ml-1">必須</span></p>
+                            <p class="col-sm-4 col-form-label">内容<span class="badge badge-info ml-1">必須</span></p>
                             <div class="col-sm-8">
                                 <p class="modal-contents"></p>
                                 <textarea name="comment" id="comment" cols="30" rows="4">これはテストです</textarea>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <p class="col-sm-4 col-form-label">感想<span class="badge badge-danger ml-1">必須</span></p>
+                            <p class="col-sm-4 col-form-label">感想<span class="badge badge-info ml-1">必須</span></p>
                             <div class="col-sm-8">
                                 <p class="modal-contents"></p>
                                 <textarea name="comment" id="comment" cols="30" rows="4">これはテストです</textarea>
@@ -62,8 +62,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">修正する</button>
-                            <button type="button" class="btn btn-secondary" style="background-color: red" data-dismiss="modal">送信する</button>
+                            <button type="button" class="btn btn-secondary" style="background-color: rgb(53, 146, 223)" data-dismiss="modal">送信する</button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +82,7 @@
                     <div class="modal-body">
                         @csrf
                         <div class="form-group row">
-                            <p class="col-sm-4 col-form-label">内容<span class="badge badge-danger ml-1">必須</span></p>
+                            <p class="col-sm-4 col-form-label">内容<span class="badge badge-info ml-1">必須</span></p>
                             <div class="col-sm-8">
                                 <p class="modal-contents"></p>
                                 <textarea name="comment" id="comment" cols="30" rows="4"></textarea>
@@ -91,7 +90,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <p class="col-sm-4 col-form-label">感想<span class="badge badge-danger ml-1">必須</span></p>
+                            <p class="col-sm-4 col-form-label">感想<span class="badge badge-info ml-1">必須</span></p>
                             <div class="col-sm-8">
                                 <p class="modal-contents"></p>
                                 <textarea name="comment" id="comment" cols="30" rows="4"></textarea>
@@ -99,8 +98,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">修正する</button>
-                            <button type="button" class="btn btn-secondary" style="background-color: red" data-dismiss="modal">送信する</button>
+                            <button type="button" class="btn btn-secondary" style="background-color: rgb(53, 146, 223)" data-dismiss="modal">送信する</button>
                         </div>
                     </div>
                 </div>
@@ -157,8 +155,19 @@
                     eventClick: function(item, jsEvent, view) {
                         $('#calendarModal').modal(); // モーダル着火
                     },
-                    select: function(start, end) {
+                    select: function(info) {
                         $('#dayModal').modal(); // モーダル着火
+                        const eventName = prompt("行為を入力してください");
+
+                        if (eventName) {
+                            // イベントの追加
+                            calendar.addEvent({
+                                title: eventName,
+                                start: info.start,
+                                end: info.end,
+                                allDay: false,
+                            });
+                        }
                     },
                 });
 

@@ -56,11 +56,11 @@ class PostController extends Controller
         return view('post.page', compact("day", 'date'));
     }
 
-    public function page2(Request $request) {
+    public function calendar(Request $request) {
         $day = $request->input('target');
         // $date = Post::whereDate('created_at', $day)->get();
         $date = Post::get();
-        return view('post.page2', compact("day", 'date'));
+        return view('post.calendar', compact("day", 'date'));
     }
 
     public function hundsontable() {

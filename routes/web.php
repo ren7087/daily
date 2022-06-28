@@ -52,8 +52,8 @@ Route::prefix('post')->group(function () {
     Route::post('store', [PostController::class, 'store'])->name('post.store');
     Route::get('page', [PostController::class, 'page'])->name('post.page');
     Route::post('page', [PostController::class, 'page'])->name('post.page');
-    Route::get('page2', [PostController::class, 'page2'])->name('post.page2');
-    Route::post('page2', [PostController::class, 'page2'])->name('post.page2');
+    Route::get('calendar', [PostController::class, 'calendar'])->name('post.calendar');
+    Route::post('calendar', [PostController::class, 'calendar'])->name('post.calendar');
     Route::get('edit', [PostController::class, 'edit'])->name('post.edit');
     Route::post('edit', [PostController::class, 'edit'])->name('post.edit');
     Route::get('fee', [PostController::class, 'fee'])->name('post.fee');
@@ -72,8 +72,8 @@ Route::group(['middleware' => 'basicauth'], function() {
         Route::post('store', [PostController::class, 'store'])->name('post.store');
         Route::get('page', [PostController::class, 'page'])->name('post.page');
         Route::post('page', [PostController::class, 'page'])->name('post.page');
-        Route::get('page2', [PostController::class, 'page2'])->name('post.page2');
-        Route::post('page2', [PostController::class, 'page2'])->name('post.page2');
+        Route::get('calendar', [PostController::class, 'calendar'])->name('post.calendar');
+        Route::post('calendar', [PostController::class, 'calendar'])->name('post.calendar');
         Route::get('edit', [PostController::class, 'edit'])->name('post.edit');
         Route::post('edit', [PostController::class, 'edit'])->name('post.edit');
         Route::get('fee', [PostController::class, 'fee'])->name('post.fee');
