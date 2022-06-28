@@ -52,7 +52,6 @@
                                 <textarea name="comment" id="comment" cols="30" rows="4">これはテストです</textarea>
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <p class="col-sm-4 col-form-label">感想<span class="badge badge-info ml-1">必須</span></p>
                             <div class="col-sm-8">
@@ -60,7 +59,6 @@
                                 <textarea name="comment" id="comment" cols="30" rows="4">これはテストです</textarea>
                             </div>
                         </div>
-
                         <div class="text-center">
                             <button type="button" class="btn btn-secondary" style="background-color: rgb(53, 146, 223)" data-dismiss="modal">送信する</button>
                         </div>
@@ -133,7 +131,9 @@
                     height: 'auto',
                     slotEventOverlap: true,
                     selectable: true,
-                    selectHelper: true,
+                    dayCellContent: function(e) {
+                        e.dayNumberText = e.dayNumberText.replace('日', '');
+                    },
                     // customButtons:{
                     //     eventListButton:{
                     //         text: 'トップページに戻る',
@@ -146,11 +146,54 @@
                         @foreach ($date as $daily)
                         {
                             id: `田中太郎　<br><br><b>お客様</b><br> {!! nl2br(e($daily['customer'])) !!}　<br><br><b>商品</b><br> {!! nl2br(e($daily['product'])) !!} <br><br><b>内容</b><br> {!! nl2br(e($daily['content'])) !!} <br><br><b>感想</b><br> {!! nl2br(e($daily['comment'])) !!}`,
+                            description: `{!! nl2br(e($daily['comment'])) !!}`,
                             title: `{!! nl2br(e($daily['action'])) !!}`,
                             start: `{!! nl2br(e($daily['start'])) !!}`,
                             end: `{!! nl2br(e($daily['end'])) !!}`,
                         },
                         @endforeach
+                        {
+                            id: "ttt",
+                            title: "商談",
+                            start: "2022-06-28 15:00",
+                            end: "2022-06-28 17:00",
+                            color: "yellow",
+                        },
+                        {
+                            id: "ttt",
+                            title: "商談",
+                            start: "2022-06-29 17:00",
+                            end: "2022-06-29 19:00",
+                            color: "yellow",
+                        },
+                        {
+                            id: "ttt",
+                            title: "見積もり",
+                            start: "2022-06-30 15:00",
+                            end: "2022-06-30 17:00",
+                            color: "red",
+                        },
+                        {
+                            id: "ttt",
+                            title: "見積もり",
+                            start: "2022-06-30 17:00",
+                            end: "2022-06-30 19:00",
+                            color: "red",
+                        },
+                        {
+                            id: "ttt",
+                            title: "見積もり",
+                            start: "2022-06-24 15:00",
+                            end: "2022-06-24 17:00",
+                            color: "red",
+                        },
+                        {
+                            id: "ttt",
+                            title: "見積もり",
+                            start: "2022-06-24 17:00",
+                            end: "2022-06-24 19:00",
+                            color: "red",
+                        },
                     ],
                     eventClick: function(item, jsEvent, view) {
                         $('#calendarModal').modal(); // モーダル着火
@@ -158,7 +201,6 @@
                     select: function(info) {
                         $('#dayModal').modal(); // モーダル着火
                         const eventName = prompt("行為を入力してください");
-
                         if (eventName) {
                             // イベントの追加
                             calendar.addEvent({
@@ -166,14 +208,13 @@
                                 start: info.start,
                                 end: info.end,
                                 allDay: false,
+                                color: "green",
                             });
                         }
                     },
                 });
-
                 calendar.render();
             });
-
         </script>
 
     </body>
