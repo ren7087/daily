@@ -74,11 +74,6 @@ class PostController extends Controller
         return view('post.tabulator', compact("date"));
     }
 
-    public function hundsonjson() {
-        $date = Post::get();
-        return view('post.hundsonjson', compact("date"));
-    }
-
     public function fee(){
         $fees = Post::selectRaw('SUM(fee) as max_price')->first();
         return view('post.fee', compact("fees"));

@@ -261,14 +261,8 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'tabulator',
+            'text'        => 'エクセル形式(tabulator)',
             'url'         => 'post/tabulator',
-            'icon'        => 'far fa-fw fa-file',
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => 'エクセル形式(hundsonjson)',
-            'url'         => 'post/hundsonjson',
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
