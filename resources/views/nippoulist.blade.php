@@ -60,9 +60,7 @@
         </div>
     </div>
 
-    <div id="mytable" style="margin-left:20px"><p style="color: red">6月18日（土）</p></div>
-    <div id="mytable2" style="margin-left:20px"><p style="color: red">6月19日（日）</p></div>
-    <div id="mytable3" style="margin-left:20px"><p style="color: red">6月20日（月）</p></div>
+    <div id="mytable" style="margin-left:20px"></div>
 </body>
 </html>
 <script>
@@ -106,35 +104,6 @@
             "content":`これはテストです`,
             "comment":`これはテストです`,
         },
-];
-
-    const table = document.getElementById('mytable');
-
-    var sheet = jexcel(table, {
-        data: spreadsheetdata,
-        search: true,
-        pagination: 10,
-        tableOverflow: true,
-        tableWidth: "auto",
-        columns: [
-            { type: 'text',      title:'id',       width:120},
-            { type: 'text',      title:'お客様',       width:120},
-            { type: 'text',      title:'場所',         width:200},
-            { type: 'text',      title:'商品',         width:200},
-            { type: 'text',      title:'開始時間',      width:200},
-            { type: 'text',      title:'終了時間',      width:200},
-            { type: 'text',      title:'行為',         width:250},
-            { type: 'text',      title:'移動手段',      width:250},
-            { type: 'text',      title:'交通費',       width:130},
-            { type: 'text',      title:'内容',         width:400 },
-            { type: 'text',      title:'感想',         width:400 },
-        ]
-    });
-</script>
-
-
-<script>
-    var spreadsheetdata = [
         {
             "id": `4`,
             "customer": `田中太郎`,
@@ -174,36 +143,6 @@
             "content":`これはテストです`,
             "comment":`これはテストです`,
         },
-];
-
-    const table2 = document.getElementById('mytable2');
-
-    var sheet = jexcel(table2, {
-        data: spreadsheetdata,
-        search: true,
-        pagination: 10,
-        tableOverflow: true,
-        tableWidth: "auto",
-        columns: [
-            { type: 'text',      title:'id',       width:120},
-            { type: 'text',      title:'お客様',       width:120},
-            { type: 'text',      title:'場所',         width:200},
-            { type: 'text',      title:'商品',         width:200},
-            { type: 'text',      title:'開始時間',      width:200},
-            { type: 'text',      title:'終了時間',      width:200},
-            { type: 'text',      title:'行為',         width:250},
-            { type: 'text',      title:'移動手段',      width:250},
-            { type: 'text',      title:'交通費',       width:130},
-            { type: 'text',      title:'内容',         width:400 },
-            { type: 'text',      title:'感想',         width:400 },
-        ]
-    });
-    $( "#mytable2" ).jexcel( "setStyle", "F2", "background-color", "yellow" ) ;
-</script>
-
-
-<script>
-    var spreadsheetdata = [
         {
             "id": `7`,
             "customer": `田中太郎`,
@@ -245,9 +184,9 @@
         },
 ];
 
-    const table3 = document.getElementById('mytable3');
+    const table = document.getElementById('mytable');
 
-    var sheet = jexcel(table3, {
+    var sheet = jexcel(table, {
         data: spreadsheetdata,
         search: true,
         pagination: 10,
@@ -267,8 +206,8 @@
             { type: 'text',      title:'感想',         width:400 },
         ]
     });
-    $( "#mytable3" ).jexcel( "setStyle", "F1", "background-color", "yellow" ) ;
 </script>
+
 <script>
     $('#datepicker').datepicker({
         altField: "#output",
