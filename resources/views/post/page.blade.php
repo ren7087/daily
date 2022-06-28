@@ -70,7 +70,8 @@
         const table = document.getElementById('mytable');
 
         var sheet = jexcel(table, {
-            data: spreadsheetdata,
+            // data: spreadsheetdata,
+            url:'../../nippou.json',
             search: true,
             pagination: 10,
             tableOverflow: true,
@@ -117,7 +118,7 @@
             })
         });
     </script>
-    <script>
+    {{-- <script>
         const download = document.getElementById('download');
         download.addEventListener('click', () => {
             sheet.download();
@@ -126,9 +127,7 @@
         const load = document.getElementById('load');
         load.addEventListener('click', () => {
             jexcel(document.getElementById('mytable'), {
-                url:'/public/nippou.json',
-
-                // data: spreadsheetdata,
+                url:'../../nippou.json',
                 // search: true,
                 // pagination: 10,
                 // tableOverflow: true,
@@ -148,5 +147,5 @@
                 ]
             });
         })
-    </script>
+    </script> --}}
 @stop
