@@ -14,6 +14,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
+
         {{-- fullcalendar --}}
         <link href='{{ asset('fullcalendar/lib/main.css') }}' rel='stylesheet' />
         <script src='{{ asset('fullcalendar/lib/main.js') }}'></script>
@@ -31,8 +33,27 @@
         <script src="{{ asset('/js/modal.js') }}"></script>
     </head>
     <body>
-        <div id="app">
-            <div class="m-auto">
+        <div class="calendar">
+            <div id='external-events'>
+                <p>
+                  <strong>予定リスト</strong><br />
+                  ドラッグでカレンダーに追加できます
+                </p>
+
+                <div class='fc-event' style="background-color: #D0B0FF">
+                  <div class='fc-event-main'>打ち合わせ</div>
+                </div>
+                <div class='fc-event' style="background-color: #46EEFF">
+                  <div class='fc-event-main'>商談</div>
+                </div>
+                <div class='fc-event' style="background-color: #FF9966">
+                  <div class='fc-event-main'>見積もり</div>
+                </div>
+                <div class='fc-event' style="background-color: pink">
+                  <div class='fc-event-main'>セミナー</div>
+                </div>
+            </div>
+            <div id='calendar-container'>
                 <div id='calendar'></div>
             </div>
         </div>
@@ -110,8 +131,20 @@
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
+                var Calendar = FullCalendar.Calendar;
+                var Draggable = FullCalendar.Draggable;
+                var containerEl = document.getElementById('external-events');
+                var checkbox = document.getElementById('drop-remove');
                 const date = @json($date);
                 const day = @json($day);
+                new Draggable(containerEl, {
+                    itemSelector: '.fc-event',
+                    eventData: function(eventEl) {
+                    return {
+                        title: eventEl.innerText
+                    };
+                    }
+                });
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'timeGridDay',
                     initialDate: new Date(),
@@ -135,6 +168,8 @@
                     height: 'auto',
                     slotEventOverlap: true,
                     selectable: true,
+                    editable: true,
+                    droppable: true,
                     dayCellContent: function(e) {
                         e.dayNumberText = e.dayNumberText.replace('日', '');
                     },

@@ -1,11 +1,56 @@
 @media (min-width: 768px) {
-    .date{
-        margin-left:570px
+    .calendar{
+        display: flex;
+    }
+    #external-events {
+        position: relative;
+        z-index: 2;
+        top: 20px;
+        width: 150px;
+        height: 230px;
+        padding: 0 10px;
+        border: 0;
+        background: #eee;
+        border-radius:10px;
+    }
+
+    #external-events .fc-event {
+        cursor: move;
+        margin: 3px 0;
+        border-radius:30px;
+        text-align: center;
+        color: white;
+    }
+
+    #calendar-container {
+        position: relative;
+        z-index: 1;
+        margin: 8px;
+    }
+
+    #calendar {
+        max-width: 1100px;
     }
 }
 
 @media (max-width: 767px) {
-    .date{
-        margin-left:35px
+    #external-events {
+        display: none;
     }
+
+    #external-events .fc-event {
+        cursor: move;
+        margin: 3px 0;
+    }
+
+    #calendar-container {
+        position: relative;
+        z-index: 1;
+        margin: 8px;
+    }
+
+    #calendar {
+        max-width: 1100px;
+    }
+
 }
