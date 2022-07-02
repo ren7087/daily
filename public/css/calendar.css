@@ -7,10 +7,10 @@
         z-index: 2;
         top: 20px;
         width: 150px;
-        height: 230px;
+        height: 250px;
         padding: 0 10px;
         border: 0;
-        background: #eee;
+        background: white;
         border-radius:10px;
     }
 
@@ -26,6 +26,7 @@
         position: relative;
         z-index: 1;
         margin: 8px;
+        width: 100%;
     }
 
     #calendar {
@@ -42,6 +43,7 @@
         position: relative;
         z-index: 1;
         margin: 8px;
+        width: 100%;
     }
 
     #calendar {

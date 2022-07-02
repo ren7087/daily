@@ -36,7 +36,7 @@
         <div class="calendar">
             <div id='external-events'>
                 <p>
-                  <strong>予定リスト</strong><br />
+                  <strong>行為リスト</strong><br />
                   ドラッグでカレンダーに追加できます
                 </p>
 
@@ -51,6 +51,9 @@
                 </div>
                 <div class='fc-event' style="background-color: pink">
                   <div class='fc-event-main'>セミナー</div>
+                </div>
+                <div class='fc-event' style="background-color: #3399FF">
+                    <div class='fc-event-main'>それ以外</div>
                 </div>
             </div>
             <div id='calendar-container'>
@@ -220,7 +223,8 @@
                     },
                     select: function(info) {
                         $('#dayModal').modal(); // モーダル着火
-                        const eventName = prompt("行為を入力してください");
+                        // const eventName = prompt("行為を入力してください");
+                        const eventName = "新規に追加した予定";
                         if (eventName) {
                             // イベントの追加
                             calendar.addEvent({
@@ -228,7 +232,7 @@
                                 start: info.start,
                                 end: info.end,
                                 allDay: false,
-                                color: "green",
+                                color: "#3399FF",
                             });
                         }
                     },
