@@ -1436,7 +1436,7 @@ A VERTICAL event
     width: 1px;
   }
 .fc .fc-list-event-dot {
-    display: inline-block;
+    display: none;
     box-sizing: content-box;
     width: 0;
     height: 0;
