@@ -802,6 +802,8 @@ A HORIZONTAL event
 
 }
 .fc .fc-daygrid-event {
+    background-color: #3399FF;
+    color: white;
     z-index: 6;
     margin-top: 1px;
   }
@@ -1415,12 +1417,16 @@ A VERTICAL event
 .fc-direction-rtl .fc-list-day-text {
   float: right;
 }
+.fc .fc-list-event {
+    background-color: #3399FF;
+    color: white;
+}
 /* make the dot closer to the event title */
 .fc-direction-ltr .fc-list-table .fc-list-event-graphic { padding-right: 0 }
 .fc-direction-rtl .fc-list-table .fc-list-event-graphic { padding-left: 0 }
 .fc .fc-list-event.fc-event-forced-url {
     cursor: pointer; /* whole row will seem clickable */
-  }
+}
 .fc .fc-list-event:hover td {
     cursor: pointer;
     background-color: #f5f5f5;

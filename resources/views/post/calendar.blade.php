@@ -193,16 +193,16 @@
                         },
                     ],
                     eventDidMount: function (info) {
-                    if (info.event._def.title=='見積もり') {
-                        info.el.style.background = '#FF9966' ;
+                    if (info.event._def.title=='打ち合わせ') {
+                        info.el.style.background = '#D0B0FF' ;
                         info.el.style.color = 'white' ;
                     }
                     if (info.event._def.title=='商談') {
                         info.el.style.background = '#46EEFF' ;
                         info.el.style.color = 'white' ;
                     }
-                    if (info.event._def.title=='打ち合わせ') {
-                        info.el.style.background = '#D0B0FF' ;
+                    if (info.event._def.title=='見積もり') {
+                        info.el.style.background = '#FF9966' ;
                         info.el.style.color = 'white' ;
                     }
                     if (info.event._def.title=='セミナー') {
