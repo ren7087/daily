@@ -19,6 +19,10 @@
         <script src='{{ asset('fullcalendar/lib/main.js') }}'></script>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+        {{-- tippy --}}
+        <script src="//unpkg.com/@popperjs/core@2" defer></script>
+	    <script src="//unpkg.com/tippy.js@6" defer></script>
+
         {{-- modal --}}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -145,8 +149,8 @@
                     events: [
                         @foreach ($date as $daily)
                         {
-                            id: `田中太郎　<br><br><b>お客様</b><br> {!! nl2br(e($daily['customer'])) !!}　<br><br><b>商品</b><br> {!! nl2br(e($daily['product'])) !!} <br><br><b>内容</b><br> {!! nl2br(e($daily['content'])) !!} <br><br><b>感想</b><br> {!! nl2br(e($daily['comment'])) !!}`,
-                            description: `{!! nl2br(e($daily['comment'])) !!}`,
+                            // id: `田中太郎　<br><br><b>お客様</b><br> {!! nl2br(e($daily['customer'])) !!}　<br><br><b>商品</b><br> {!! nl2br(e($daily['product'])) !!} <br><br><b>内容</b><br> {!! nl2br(e($daily['content'])) !!} <br><br><b>感想</b><br> {!! nl2br(e($daily['comment'])) !!}`,
+                            id: `お客様: 「 {!! nl2br(e($daily['customer'])) !!} 」 \n  商品: 「 {!! nl2br(e($daily['product'])) !!} 」  \n  内容: 「 {!! nl2br(e($daily['content'])) !!} 」 \n  感想: 「 {!! nl2br(e($daily['comment'])) !!} 」`,
                             title: `{!! nl2br(e($daily['action'])) !!}`,
                             start: `{!! nl2br(e($daily['start'])) !!}`,
                             end: `{!! nl2br(e($daily['end'])) !!}`,
@@ -190,11 +194,11 @@
                     ],
                     eventDidMount: function (info) {
                     if (info.event._def.title=='見積もり') {
-                        info.el.style.background = 'red' ;
+                        info.el.style.background = '#FF9966' ;
                         info.el.style.color = 'white' ;
                     }
                     if (info.event._def.title=='商談') {
-                        info.el.style.background = 'gray' ;
+                        info.el.style.background = '#46EEFF' ;
                         info.el.style.color = 'white' ;
                     }
                     if (info.event._def.title=='打ち合わせ') {
@@ -205,6 +209,9 @@
                         info.el.style.background = 'pink' ;
                         info.el.style.color = 'white' ;
                     }
+                    tippy(info.el, {// TippyでTooltipを設定する
+                        content: info.event.id,
+                    });
                     },
                     eventClick: function(item, jsEvent, view) {
                         $('#calendarModal').modal(); // モーダル着火
