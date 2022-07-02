@@ -157,44 +157,55 @@
                             title: "商談",
                             start: "2022-06-28 15:00",
                             end: "2022-06-28 17:00",
-                            color: "yellow",
                         },
                         {
                             id: "ttt",
                             title: "商談",
                             start: "2022-06-29 17:00",
                             end: "2022-06-29 19:00",
-                            color: "yellow",
                         },
                         {
                             id: "ttt",
                             title: "見積もり",
                             start: "2022-06-30 15:00",
                             end: "2022-06-30 17:00",
-                            color: "red",
                         },
                         {
                             id: "ttt",
                             title: "見積もり",
                             start: "2022-06-30 17:00",
                             end: "2022-06-30 19:00",
-                            color: "red",
                         },
                         {
                             id: "ttt",
                             title: "見積もり",
                             start: "2022-06-24 15:00",
-                            end: "2022-06-24 17:00",
-                            color: "red",
-                        },
+                            end: "2022-06-24 17:00",                        },
                         {
                             id: "ttt",
                             title: "見積もり",
                             start: "2022-06-24 17:00",
                             end: "2022-06-24 19:00",
-                            color: "red",
                         },
                     ],
+                    eventDidMount: function (info) {
+                    if (info.event._def.title=='見積もり') {
+                        info.el.style.background = 'red' ;
+                        info.el.style.color = 'white' ;
+                    }
+                    if (info.event._def.title=='商談') {
+                        info.el.style.background = 'gray' ;
+                        info.el.style.color = 'white' ;
+                    }
+                    if (info.event._def.title=='打ち合わせ') {
+                        info.el.style.background = 'green' ;
+                        info.el.style.color = 'white' ;
+                    }
+                    if (info.event._def.title=='セミナー') {
+                        info.el.style.background = 'pink' ;
+                        info.el.style.color = 'white' ;
+                    }
+                    },
                     eventClick: function(item, jsEvent, view) {
                         $('#calendarModal').modal(); // モーダル着火
                     },
