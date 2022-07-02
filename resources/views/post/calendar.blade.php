@@ -149,7 +149,6 @@
                     events: [
                         @foreach ($date as $daily)
                         {
-                            // id: `田中太郎　<br><br><b>お客様</b><br> {!! nl2br(e($daily['customer'])) !!}　<br><br><b>商品</b><br> {!! nl2br(e($daily['product'])) !!} <br><br><b>内容</b><br> {!! nl2br(e($daily['content'])) !!} <br><br><b>感想</b><br> {!! nl2br(e($daily['comment'])) !!}`,
                             id: `お客様: 「 {!! nl2br(e($daily['customer'])) !!} 」 \n  商品: 「 {!! nl2br(e($daily['product'])) !!} 」  \n  内容: 「 {!! nl2br(e($daily['content'])) !!} 」 \n  感想: 「 {!! nl2br(e($daily['comment'])) !!} 」`,
                             title: `{!! nl2br(e($daily['action'])) !!}`,
                             start: `{!! nl2br(e($daily['start'])) !!}`,
@@ -184,7 +183,8 @@
                             id: "ttt",
                             title: "見積もり",
                             start: "2022-06-24 15:00",
-                            end: "2022-06-24 17:00",                        },
+                            end: "2022-06-24 17:00",
+                        },
                         {
                             id: "ttt",
                             title: "見積もり",
