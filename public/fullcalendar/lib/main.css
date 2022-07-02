@@ -1442,16 +1442,6 @@ A VERTICAL event
     white-space: nowrap;
     width: 1px;
   }
-.fc .fc-list-event-dot {
-    display: none;
-    box-sizing: content-box;
-    width: 0;
-    height: 0;
-    border: 5px solid #3788d8;
-    border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid var(--fc-event-border-color, #3788d8);
-    border-radius: 5px;
-    border-radius: calc(var(--fc-list-event-dot-width, 10px) / 2);
-  }
 .fc {
 
   /* reset <a> styling */
