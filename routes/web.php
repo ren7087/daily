@@ -79,7 +79,6 @@ Route::group(['middleware' => 'basicauth'], function() {
         Route::get('fee', [PostController::class, 'fee'])->name('post.fee');
 
         Route::get('hundsontable', [PostController::class, 'hundsontable'])->name('post.hundsontable');
-        Route::get('tabulator', [PostController::class, 'tabulator'])->name('post.tabulator');
     });
 });
 

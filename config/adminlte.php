@@ -261,12 +261,6 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'エクセル形式(tabulator)',
-            'url'         => 'post/tabulator',
-            'icon'        => 'far fa-fw fa-file',
-            'label_color' => 'success',
-        ],
-        [
             'text'        => 'カレンダー形式',
             'url'         => 'post/calendar',
             'icon'        => 'far fa-fw fa-file',
