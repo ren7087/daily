@@ -1142,7 +1142,7 @@ A VERTICAL event
       background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));
     }
 .fc .fc-timegrid-col-frame {
-    min-height: 100%; /* liquid-hack is below */
+    min-height: 100%; /* liquid-hack  is below */
     position: relative;
   }
 .fc-media-screen.fc-liquid-hack .fc-timegrid-col-frame {
