@@ -208,10 +208,12 @@
                         info.el.style.background = 'pink' ;
                         info.el.style.color = 'white' ;
                     }
-                    tippy(info.el, {// TippyでTooltipを設定する
-                        content: info.event.id,
-                        allowHTML: true,
-                    });
+                    if(info.event.id){ //現状DBから取ってきたものだけにTippyを適用したい
+                        tippy(info.el, {// TippyでTooltipを設定する
+                            content: info.event.id,
+                            allowHTML: true,
+                        });
+                    }
                     },
                     eventClick: function(item, jsEvent, view) {
                         $('#calendarModal').modal(); // モーダル着火
