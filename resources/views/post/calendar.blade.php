@@ -198,7 +198,7 @@
                         info.el.style.color = 'white' ;
                     }
                     if (info.event._def.title=='打ち合わせ') {
-                        info.el.style.background = 'green' ;
+                        info.el.style.background = '#D0B0FF' ;
                         info.el.style.color = 'white' ;
                     }
                     if (info.event._def.title=='セミナー') {

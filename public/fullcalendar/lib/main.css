@@ -1422,6 +1422,7 @@ A VERTICAL event
     cursor: pointer; /* whole row will seem clickable */
   }
 .fc .fc-list-event:hover td {
+    cursor: pointer;
     background-color: #f5f5f5;
     background-color: var(--fc-list-event-hover-bg-color, #f5f5f5);
   }
