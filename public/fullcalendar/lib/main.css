@@ -1215,7 +1215,8 @@ A VERTICAL event
     margin: 0 2px 0 2.5%;
   }
 .fc-timegrid-event-harness {
-  position: absolute /* top/left/right/bottom will all be set by JS */
+  position: absolute; /* top/left/right/bottom will all be set by JS */
+  cursor: pointer;
 }
 .fc-timegrid-event-harness > .fc-timegrid-event {
     position: absolute; /* absolute WITHIN the harness */

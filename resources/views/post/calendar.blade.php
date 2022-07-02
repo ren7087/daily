@@ -149,7 +149,7 @@
                     events: [
                         @foreach ($date as $daily)
                         {
-                            id: `お客様: 「 {!! nl2br(e($daily['customer'])) !!} 」 \n  商品: 「 {!! nl2br(e($daily['product'])) !!} 」  \n  内容: 「 {!! nl2br(e($daily['content'])) !!} 」 \n  感想: 「 {!! nl2br(e($daily['comment'])) !!} 」`,
+                            id: `お客様: {!! nl2br(e($daily['customer'])) !!} <br />  <br />商品: {!! nl2br(e($daily['product'])) !!}  <br />  <br />内容: <br />{!! nl2br(e($daily['content'])) !!} <br />  <br />感想: <br />{!! nl2br(e($daily['comment'])) !!}`,
                             title: `{!! nl2br(e($daily['action'])) !!}`,
                             start: `{!! nl2br(e($daily['start'])) !!}`,
                             end: `{!! nl2br(e($daily['end'])) !!}`,
@@ -211,6 +211,7 @@
                     }
                     tippy(info.el, {// TippyでTooltipを設定する
                         content: info.event.id,
+                        allowHTML: true,
                     });
                     },
                     eventClick: function(item, jsEvent, view) {
