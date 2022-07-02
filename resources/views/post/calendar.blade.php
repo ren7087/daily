@@ -155,42 +155,6 @@
                             end: `{!! nl2br(e($daily['end'])) !!}`,
                         },
                         @endforeach
-                        {
-                            id: "ttt",
-                            title: "商談",
-                            start: "2022-06-28 15:00",
-                            end: "2022-06-28 17:00",
-                        },
-                        {
-                            id: "ttt",
-                            title: "商談",
-                            start: "2022-06-29 17:00",
-                            end: "2022-06-29 19:00",
-                        },
-                        {
-                            id: "ttt",
-                            title: "見積もり",
-                            start: "2022-06-30 15:00",
-                            end: "2022-06-30 17:00",
-                        },
-                        {
-                            id: "ttt",
-                            title: "見積もり",
-                            start: "2022-06-30 17:00",
-                            end: "2022-06-30 19:00",
-                        },
-                        {
-                            id: "ttt",
-                            title: "見積もり",
-                            start: "2022-06-24 15:00",
-                            end: "2022-06-24 17:00",
-                        },
-                        {
-                            id: "ttt",
-                            title: "見積もり",
-                            start: "2022-06-24 17:00",
-                            end: "2022-06-24 19:00",
-                        },
                     ],
                     eventDidMount: function (info) {
                     if (info.event._def.title=='打ち合わせ') {
