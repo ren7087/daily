@@ -18,6 +18,7 @@ function App() {
     const handleDateClick = useCallback((arg: DateClickArg) => {
         alert(arg.dateStr);
     }, []);
+    const todayStr = new Date().toISOString().replace(/T.*$/, "");
     return (
         <div>
         <FullCalendar
@@ -33,6 +34,14 @@ function App() {
             events={[
                 { title: "event 1", date: `${thisMonth()}-01` },
                 { title: "event 2", date: `${thisMonth()}-02` },
+                {
+                    title: "All-day event",
+                    start: todayStr,
+                },
+                {
+                    title: "Timed event",
+                    start: todayStr + "T12:00:00",  // 時刻はTで結ぶ
+                },
             ]}
             dateClick = {handleDateClick}
             selectable={true}
