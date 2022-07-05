@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="{{ asset('css/button.css') }}">
   <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
   <link rel="stylesheet" href="{{ asset('css/template.css') }}">
+
+  <script src="{{ asset('js/app.js') }}" defer></script>
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
   {{ $slot }}

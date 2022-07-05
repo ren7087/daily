@@ -59,7 +59,9 @@ Route::prefix('post')->group(function () {
     Route::get('fee', [PostController::class, 'fee'])->name('post.fee');
 
     Route::get('hundsontable', [PostController::class, 'hundsontable'])->name('post.hundsontable');
-    Route::get('tabulator', [PostController::class, 'tabulator'])->name('post.tabulator');
+    Route::get('react-calendar', [PostController::class, 'reactCalendar'])->name('post.react-calendar');
+    Route::get('react-input', [PostController::class, 'reactInput'])->name('post.react-input');
+    Route::get('react-excel', [PostController::class, 'reactExcel'])->name('post.react-excel');
 });
 
 Route::group(['middleware' => 'basicauth'], function() {

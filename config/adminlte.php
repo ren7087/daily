@@ -266,6 +266,25 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
+        ['header' => 'React'],
+        [
+            'text'        => 'React投稿',
+            'url'         => 'post/react-input',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Reactカレンダー形式',
+            'url'         => 'post/react-calendar',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'React Excel',
+            'url'         => 'post/react-excel',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
         ['header' => 'マネジメント'],
         [
             'text'        => '交通費管理',

@@ -8,6 +8,8 @@
 
 @section('content')
 <x-app>
+    <div id="app"></div>
+    <div id="example"></div>
     <div style="margin-top: 150px">
         <div class="button09">
             <a href="/post/add">日報登録</a>

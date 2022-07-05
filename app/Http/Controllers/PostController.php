@@ -63,6 +63,24 @@ class PostController extends Controller
         return view('post.calendar', compact("day", 'date'));
     }
 
+    public function reactCalendar(Request $request) {
+        $day = $request->input('target');
+        // $date = Post::whereDate('created_at', $day)->get();
+        $date = Post::get();
+        return view('post.react-calendar', compact("day", 'date'));
+    }
+
+    public function reactInput(Request $request) {
+        $time = new Carbon(Carbon::now());
+        $today = $time->format('Y-m-d');
+        return view('post.react-input', compact("time", 'today'));
+    }
+
+    public function reactExcel() {
+        $date = Post::get();
+        return view('post.react-excel', compact("date"));
+    }
+
     public function hundsontable() {
         $date = Post::get();
         return view('post.hundsontable', compact("date"));
