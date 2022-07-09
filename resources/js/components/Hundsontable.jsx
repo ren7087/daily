@@ -18,7 +18,14 @@ class Hundsontable extends React.Component {
   }
 
   render() {
-    return (<HotTable data={this.data} colHeaders={true} rowHeaders={true} width="600" height="300" />);
+    return (<HotTable
+        data={this.data}
+        colHeaders={true}
+        rowHeaders={true}
+        width="600"
+        height="300"
+        licenseKey='non-commercial-and-evaluation'
+    />);
   }
 }
 
