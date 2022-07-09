@@ -48,6 +48,8 @@
         "@jspreadsheet/xls": "^1.6.1",
         "@mui/material": "^5.8.7",
         "@types/react-modal": "^3.13.1",
+        "encoding-japanese": "^2.0.0",
+        "exceljs": "^4.3.0",
         "handsontable": "^12.1.2",
         "jspreadsheet-ce": "^4.11.1",
         "jspreadsheet-pro": "^7.12.6",

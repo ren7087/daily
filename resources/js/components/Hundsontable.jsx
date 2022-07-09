@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HotTable } from '@handsontable/react';
 import ReactDOM from 'react-dom';
+import {data} from "../../../public/nippou.json";
 
 class Hundsontable extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Hundsontable extends React.Component {
       [12, 30, 15, 12, 7],
       [12, 30, 15, 12, 7],
       [12, 30, 15, 12, 7],
+      [{data}],
     ];
   }
 

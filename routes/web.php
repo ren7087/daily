@@ -65,6 +65,7 @@ Route::prefix('post')->group(function () {
     Route::post('store2', [PostController::class, 'store2'])->name('post.store2');
     Route::get('react-index', [PostController::class, 'reactIndex'])->name('post.react-index');
     Route::get('react-hundsontable', [PostController::class, 'reactHundsontable'])->name('post.react-hundsontable');
+    Route::get('react-excelJs', [PostController::class, 'reactExcelJs'])->name('post.react-excelJs');
 });
 
 Route::group(['middleware' => 'basicauth'], function() {

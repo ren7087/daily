@@ -104,6 +104,10 @@ class PostController extends Controller
         return view('post.react-hundsontable', compact("date"));
     }
 
+    public function reactExcelJs() {
+        return view('post.react-excelJs');
+    }
+
     public function hundsontable() {
         $date = Post::get();
         return view('post.hundsontable', compact("date"));
