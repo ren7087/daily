@@ -16,3 +16,4 @@ require('./components/App');
 require('./components/Example');
 require('./components/Input');
 require('./components/Excel');
+require('./components/Index');

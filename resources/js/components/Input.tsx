@@ -113,7 +113,7 @@ export const Input = () => {
     const onSubmit = (event) => {
         event.preventDefault();
         axios
-        .post("/post/store", {
+        .post("/post/store2", {
             customer,
             location,
             product,
@@ -125,8 +125,8 @@ export const Input = () => {
             content,
             comment
         })
-        .then(r => console.log("送信!"))
-        .catch(r => console.log("失敗!"))
+        .then(r => alert("送信完了!"))
+        .catch(r => alert("失敗!"))
     }
 
     return (
@@ -155,12 +155,12 @@ export const Input = () => {
             </div>
 
             <div>
-            {/* <SFormHead>行為</SFormHead> */}
-            <SFormInput type={"hidden"} value="打ち合わせ" onChange={onChangeAction} />
+            <SFormHead>行為</SFormHead>
+            <SFormInput type={"text"} value={action} placeholder="例) 打ち合わせ、見積もり、商談、セミナー" onChange={onChangeAction} />
             </div>
             <div>
-            {/* <SFormHead>移動手段</SFormHead> */}
-            <SFormInput type={"hidden"} value="電車" onChange={onChangeTransportation} />
+            <SFormHead>移動手段</SFormHead>
+            <SFormInput type={"text"} value={transportation} placeholder="例) 徒歩、車、タクシー、電車" onChange={onChangeTransportation} />
             </div>
 
             <div>

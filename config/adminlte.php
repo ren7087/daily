@@ -274,6 +274,12 @@ return [
             'label_color' => 'success',
         ],
         [
+            'text'        => 'React投稿一覧',
+            'url'         => 'post/react-index',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
             'text'        => 'Reactカレンダー形式',
             'url'         => 'post/react-calendar',
             'icon'        => 'far fa-fw fa-file',

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\TimeRequest;
+use App\Http\Resources\PostResource;
 
 class PostController extends Controller
 {
@@ -15,6 +16,11 @@ class PostController extends Controller
     //     // $this->middleware('auth')->except(['index2']);
     //     $this->middleware('auth');
     // }
+
+    public function getPosts()
+    {
+        return PostResource::collection(Post::all());
+    }
 
     public function index2() {
         $time = new Carbon(Carbon::now());
@@ -37,8 +43,16 @@ class PostController extends Controller
         $post->customer = $input["customer"];
         $post->location = $input["location"];
         $post->product = implode(",", $input["product"]);
-        $post->start = $_POST['date1']." ".$input["start"];
-        $post->end = $_POST['date2']. " ".$input["end"];
+        if(isset($_POST['date1'])) {
+            $post->start = $_POST['date1']." ".$input["start"];
+        } else {
+            $post->start = $input["start"];
+        }
+        if(isset($_POST['date2'])) {
+            $post->end = $_POST['date2']. " ".$input["end"];
+        } else {
+            $post->end = $input["end"];
+        }
         $post->action = implode("," , $_POST["action"]);
         $post->transportation = implode("," , $_POST["transportation"]);
         $post->fee = $input["fee"];
@@ -68,6 +82,10 @@ class PostController extends Controller
         // $date = Post::whereDate('created_at', $day)->get();
         $date = Post::get();
         return view('post.react-calendar', compact("day", 'date'));
+    }
+
+    public function reactIndex() {
+        return view('post.react-index');
     }
 
     public function reactInput(Request $request) {
@@ -215,6 +233,32 @@ class PostController extends Controller
         fclose($handle);
     }
 
+    public function store2(Request $request)
+    {
+        $input = $request->only('customer', 'location', 'product', 'start', 'end', 'action', 'transportation', 'fee', 'content',  'comment');
 
+        $post = new Post();
+        $post->customer = $input["customer"];
+        $post->location = $input["location"];
+        $post->product = $input["product"];
+        if(isset($_POST['date1'])) {
+            $post->start = $_POST['date1']." ".$input["start"];
+        } else {
+            $post->start = $input["start"];
+        }
+        if(isset($_POST['date2'])) {
+            $post->end = $_POST['date2']. " ".$input["end"];
+        } else {
+            $post->end = $input["end"];
+        }
+        $post->action = $input["action"];
+        $post->transportation = $input["transportation"];
+        $post->fee = $input["fee"];
+        $post->content = $input["content"];
+        $post->comment = $input["comment"];
+        $post->save();
+
+        return redirect('/')->with('success', '日報を登録しました');
+    }
 
 }
