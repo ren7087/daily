@@ -291,6 +291,12 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'React Hundsontable',
+            'url'         => 'post/react-hundsontable',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
         ['header' => 'マネジメント'],
         [
             'text'        => '交通費管理',
