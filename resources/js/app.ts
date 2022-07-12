@@ -19,3 +19,5 @@ require('./components/Excel');
 require('./components/Index');
 require('./components/Hundsontable');
 require('./components/ExcelJs');
+require('./components/Modal');
+require('./components/Page');

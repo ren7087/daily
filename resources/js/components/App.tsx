@@ -10,8 +10,10 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import allLocales from "@fullcalendar/core/locales-all";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./event-utils";
+import {Modal} from "./Modal";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
   const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
   const handleEvents = useCallback(
     (events: EventApi[]) => setCurrentEvents(events),
@@ -31,10 +33,11 @@ function App() {
       });
     }
   }, []);
+//   const handleDateClick = () => {
+//     setShowModal(true);
+//   };
   const handleEventClick = useCallback((clickInfo: EventClickArg) => {
-    if (
-      window.confirm(`このイベント「${clickInfo.event.title}」を削除しますか`)
-    ) {
+    if ( window.confirm(`このイベント「${clickInfo.event.title}」を削除しますか`) ) {
       clickInfo.event.remove();
     }
   }, []);
@@ -57,7 +60,9 @@ function App() {
           eventsSet={handleEvents}
           select={handleDateSelect}
           eventClick={handleEventClick}
+        //   dateClick={handleDateClick}
         />
+        <Modal showFlag={showModal} setShowMOdal={setShowModal} />
       </div>
     </div>
   );

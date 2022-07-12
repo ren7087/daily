@@ -84,6 +84,13 @@ class PostController extends Controller
         return view('post.react-calendar', compact("day", 'date'));
     }
 
+    public function reactPage(Request $request) {
+        $day = $request->input('target');
+        // $date = Post::whereDate('created_at', $day)->get();
+        $date = Post::get();
+        return view('post.react-page', compact("day", 'date'));
+    }
+
     public function reactIndex() {
         return view('post.react-index');
     }

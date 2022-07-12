@@ -268,6 +268,12 @@ return [
         ],
         ['header' => 'React'],
         [
+            'text'        => 'React一覧画面',
+            'url'         => 'post/react-page',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
             'text'        => 'React投稿',
             'url'         => 'post/react-input',
             'icon'        => 'far fa-fw fa-file',

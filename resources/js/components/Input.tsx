@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom';
 import styled from "styled-components";
 import axios from 'axios';
 
+const SCard = styled.div`
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,.2);
+    padding: 90px;
+    background-color: #fff;
+    border-radius: 30px;
+    width: 40%;
+    height: auto;
+`;
+
 const SForm = styled.form`
     display: grid;
     grid-template: auto / 100%;
@@ -130,8 +140,8 @@ export const Input = () => {
     }
 
     return (
-        <div style={{padding: "100px"}}>
-        <h2 style={{textAlign: "center", paddingBottom: "30px"}}>日報登録</h2>
+        <SCard>
+        <h2 style={{textAlign: "center", paddingBottom: "30px", fontWeight: "bold"}}>日報登録</h2>
         <SForm onSubmit={onSubmit}>
             <div>
             <SFormHead>お客様*</SFormHead>
@@ -185,7 +195,7 @@ export const Input = () => {
             </div>
             <SButton type="submit">送信</SButton>
         </SForm>
-        </div>
+        </SCard>
     )
 }
 
