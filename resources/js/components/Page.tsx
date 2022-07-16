@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import {useState} from "react";
 import Hundsontable from "./Hundsontable";
-import App from "./App";
 import Modal from 'react-modal';
 import styled from "styled-components";
 
@@ -89,8 +88,8 @@ export const Page: React.FC = () => {
       </Modal>
       {/* <div style={{display: "flex"}}> */}
         <SBubmitButton onClick={openModal}>新規登録</SBubmitButton>
+        <SBubmitButton>カレンダー</SBubmitButton>
         <Hundsontable/>
-        <App />
       {/* </div><br /> */}
       <br />
     </div>

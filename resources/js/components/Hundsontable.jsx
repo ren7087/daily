@@ -4,6 +4,56 @@ import { HotTable, HotColumn } from "@handsontable/react";
 import "handsontable/dist/handsontable.min.css";
 import axios from "axios";
 import {useState, useEffect} from "react";
+import styled from "styled-components";
+
+const SOverlay = styled.div`
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:5;
+`
+
+const SContent = styled.div`
+    z-index: 10;
+    width: 50%;
+    padding: 1em;
+    background: #fff;
+`
+
+const STable = styled.div`
+    z-index:1;
+    position: absolute;
+`
+
+const SSearchButton = styled.button`
+  border: none;
+  color: white;
+  background: #dc3545;
+  padding: 7px
+  border-radius: 999px;
+  cursor: pointer;
+  width: 20%;
+  margin: 20px;
+`
+
+const SButton = styled.button`
+    margin: 7px;
+    background-color: red;
+    color: white;
+    width: 80px;
+    height: 30px;
+`
+
+const SInput = styled.input`
+    border: 1px solid;
+    border-radius: 8px;
+`
 
 // a renderer component
 const ScoreRenderer = (props) => {
@@ -124,7 +174,30 @@ const hotSettings = {
   search: true,
 };
 
+function Modal(props){
+    const {show, setShow} = props;
+    if (props.show) {
+        return (
+            <SOverlay onClick={() => setShow(false)}>
+                <SContent onClick={(e) => e.stopPropagation()}>
+                    <form>
+                        <p>お客様</p><SInput placeholder="ex)本田" /><br />
+                        <p>場所</p><SInput placeholder="ex)八王子駅" /><br />
+                        <p>商品</p><SInput placeholder="ex)テレビ" /><br />
+                        <p>時間</p><SInput type="time" /><br /><br />
+                    </form>
+                    <SButton onClick={() => setShow(false)}>close</SButton>
+                    <SButton>Submit</SButton>
+                </SContent>
+            </SOverlay>
+        );
+    } else {
+        return null;
+    }
+};
+
 const Hundsontable = () => {
+    const [show, setShow] = useState(false);
     const [posts, setPosts] = useState([]);
 
 useEffect (
@@ -139,6 +212,13 @@ useEffect (
     []
 );
   return (
+    <>
+    <h2>日報です</h2>
+    <div>
+      <SSearchButton onClick={() => setShow(true)}>検索</SSearchButton>
+      <Modal show={show} setShow={setShow} />
+    </div>
+    <STable>
     <HotTable settings={hotSettings}>
       {/* use the `data` prop to reference the column data */}
       <HotColumn data="id" />
@@ -159,6 +239,8 @@ useEffect (
       <HotColumn data="content"></HotColumn>
       <HotColumn data="comment"></HotColumn>
     </HotTable>
+    </STable>
+    </>
   );
 };
 
