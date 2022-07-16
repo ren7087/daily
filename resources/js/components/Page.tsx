@@ -18,6 +18,17 @@ const SInput = styled.input`
     border-radius: 8px;
 `
 
+const SBubmitButton = styled.button`
+  border: none;
+  color: white;
+  background: #dc3545;
+  padding: 7px
+  border-radius: 999px;
+  cursor: pointer;
+  width: 100%;
+  margin: 20px;
+`
+
 const customStyles = {
   content: {
     top: '50%',
@@ -28,10 +39,12 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     width: '30%',
     height: 'auto',
+    zIndex: 1000,
+    positions: "absolute"
   },
 }
 
-Modal.setAppElement('#page') // bodyなど任意の要素に変更OK
+Modal.setAppElement('#page')
 
 export const Page: React.FC = () => {
   let subtitle: HTMLHeadingElement | null
@@ -74,11 +87,11 @@ export const Page: React.FC = () => {
         <SButton onClick={closeModal}>x</SButton>
         <SButton>登録する</SButton>
       </Modal>
-      <div style={{display: "flex"}}>
-        <Hundsontable />
-        <button style={{fontSize: "20px", fontWeight: "bold", color: "red"}} onClick={openModal}>新規登録</button>
-      </div><br />
-      <App />
+      {/* <div style={{display: "flex"}}> */}
+        <SBubmitButton onClick={openModal}>新規登録</SBubmitButton>
+        <Hundsontable/>
+        <App />
+      {/* </div><br /> */}
       <br />
     </div>
   )

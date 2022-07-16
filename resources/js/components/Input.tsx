@@ -148,33 +148,33 @@ export const Input = () => {
             <SFormInput type={"text"} value={customer} required onChange={onChangeCustomer} />
             </div>
             <div>
-            <SFormHead>場所</SFormHead>
+            <SFormHead>場所*</SFormHead>
             <SFormInput type={"text"} value={location} placeholder="八王子駅" onChange={onChangeLocation} />
             </div>
             <div>
-            <SFormHead>商品</SFormHead>
+            <SFormHead>商品*</SFormHead>
             <SFormInput type={"text"} value={product} onChange={onChangeProduct} />
             </div>
             <div>
-            <SFormHead>開始時間</SFormHead>
+            <SFormHead>開始時間*</SFormHead>
             <SFormInput type={"time"} value={start} onChange={onChangeStart} />
             </div>
             <div>
-            <SFormHead>終了時間</SFormHead>
+            <SFormHead>終了時間*</SFormHead>
             <SFormInput type={"time"} value={end} onChange={onChangeEnd} />
             </div>
 
             <div>
-            <SFormHead>行為</SFormHead>
+            <SFormHead>行為*</SFormHead>
             <SFormInput type={"text"} value={action} placeholder="例) 打ち合わせ、見積もり、商談、セミナー" onChange={onChangeAction} />
             </div>
             <div>
-            <SFormHead>移動手段</SFormHead>
+            <SFormHead>移動手段*</SFormHead>
             <SFormInput type={"text"} value={transportation} placeholder="例) 徒歩、車、タクシー、電車" onChange={onChangeTransportation} />
             </div>
 
             <div>
-            <SFormHead>交通費</SFormHead>
+            <SFormHead>交通費*</SFormHead>
             <SFormInput type={"text"} value={fee} placeholder="1000円" onChange={onChangeFee} />
             </div>
             <div>
