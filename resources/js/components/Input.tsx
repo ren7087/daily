@@ -9,7 +9,7 @@ const SCard = styled.div`
     padding: 90px;
     background-color: #fff;
     border-radius: 30px;
-    width: 40%;
+    width: 65%;
     height: auto;
 `;
 

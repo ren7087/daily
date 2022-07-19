@@ -6,6 +6,7 @@ import styled from "styled-components";
 import {
     Button,
     Stack,
+    Link
 } from '@chakra-ui/react';
 import { AddIcon, CalendarIcon} from '@chakra-ui/icons';
 
@@ -86,9 +87,13 @@ export const Page: React.FC = () => {
                 新規登録
             </Button>
             <Button rightIcon={<CalendarIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>
-                カレンダー
+            <Link color="white" href='/post/react-input' textDecoration="none">新規登録</Link>
+            </Button>
+            <Button rightIcon={<CalendarIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>
+            <Link color="white" href='/post/react-calendar' textDecoration="none">カレンダー</Link>
             </Button>
         </Stack><br />
+
         <Hundsontable/>
       {/* </div><br /> */}
       <br />
