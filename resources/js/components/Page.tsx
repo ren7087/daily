@@ -3,6 +3,12 @@ import {useState} from "react";
 import Hundsontable from "./Hundsontable";
 import Modal from 'react-modal';
 import styled from "styled-components";
+import {
+    Box,
+    Button,
+    Stack,
+} from '@chakra-ui/react';
+import { AddIcon, CalendarIcon} from '@chakra-ui/icons';
 
 const SButton = styled.button`
     margin: 7px;
@@ -87,8 +93,14 @@ export const Page: React.FC = () => {
         <SButton>登録する</SButton>
       </Modal>
       {/* <div style={{display: "flex"}}> */}
-        <SBubmitButton onClick={openModal}>新規登録</SBubmitButton>
-        <SBubmitButton>カレンダー</SBubmitButton>
+        <Stack direction='row' spacing={10}>
+            <Button leftIcon={<AddIcon />} colorScheme='teal' backgroundColor="teal" color="white" size='lg' padding={9} variant='solid' onClick={openModal}>
+                新規登録
+            </Button>
+            <Button rightIcon={<CalendarIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>
+                カレンダー
+            </Button>
+        </Stack><br />
         <Hundsontable/>
       {/* </div><br /> */}
       <br />

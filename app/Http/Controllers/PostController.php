@@ -91,8 +91,8 @@ class PostController extends Controller
         return view('post.react-page', compact("day", 'date'));
     }
 
-    public function reactIndex() {
-        return view('post.react-index');
+    public function reactAlldata() {
+        return view('post.react-alldata');
     }
 
     public function reactInput(Request $request) {

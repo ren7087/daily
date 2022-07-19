@@ -281,7 +281,7 @@ return [
         ],
         [
             'text'        => 'React投稿一覧',
-            'url'         => 'post/react-index',
+            'url'         => 'post/react-alldata',
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],

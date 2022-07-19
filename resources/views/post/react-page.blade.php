@@ -5,6 +5,7 @@
 @section('content')
 <x-app>
     <div id="page"></div>
+    <div id="createPost"></div>
 </x-app>
 @stop
 

@@ -5,6 +5,10 @@ import "handsontable/dist/handsontable.min.css";
 import axios from "axios";
 import {useState, useEffect} from "react";
 import styled from "styled-components";
+import {
+    Button,
+} from '@chakra-ui/react';
+import { SearchIcon} from '@chakra-ui/icons';
 
 const SOverlay = styled.div`
     position: fixed;
@@ -29,17 +33,6 @@ const SContent = styled.div`
 const STable = styled.div`
     z-index:1;
     position: absolute;
-`
-
-const SSearchButton = styled.button`
-  border: none;
-  color: white;
-  background: #dc3545;
-  padding: 7px
-  border-radius: 999px;
-  cursor: pointer;
-  width: 20%;
-  margin: 20px;
 `
 
 const SButton = styled.button`
@@ -213,11 +206,13 @@ useEffect (
 );
   return (
     <>
-    <h2>日報です</h2>
+    <h2>日報システム</h2>
     <div>
-      <SSearchButton onClick={() => setShow(true)}>検索</SSearchButton>
-      <Modal show={show} setShow={setShow} />
-    </div>
+        <Button rightIcon={<SearchIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline' onClick={() => setShow(true)}>
+            検索
+        </Button>
+        <Modal show={show} setShow={setShow} />
+    </div><br/>
     <STable>
     <HotTable settings={hotSettings}>
       {/* use the `data` prop to reference the column data */}
