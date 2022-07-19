@@ -241,6 +241,13 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
+        ['header' => '利用ライブラリ一覧'],
+        [
+            'text'        => 'ライブラリ',
+            'url'         => 'post/description',
+            'icon'        => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
         ['header' => '日報'],
         [
             'text'        => '投稿',

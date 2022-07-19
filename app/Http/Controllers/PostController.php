@@ -127,6 +127,10 @@ class PostController extends Controller
         return view('post.fee', compact("fees"));
     }
 
+    public function description() {
+        return view("post.description");
+    }
+
     // public function edit(Request $request){
     //     $textData = [];
     //     // $raw = file_get_contents('php://input'); // POSTされた生のデータを受け取る

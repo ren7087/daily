@@ -57,6 +57,7 @@ Route::prefix('post')->group(function () {
     Route::get('edit', [PostController::class, 'edit'])->name('post.edit');
     Route::post('edit', [PostController::class, 'edit'])->name('post.edit');
     Route::get('fee', [PostController::class, 'fee'])->name('post.fee');
+    Route::get('description', [PostController::class, 'description'])->name('post.description');
 
     Route::get('hundsontable', [PostController::class, 'hundsontable'])->name('post.hundsontable');
     Route::get('react-calendar', [PostController::class, 'reactCalendar'])->name('post.react-calendar');
