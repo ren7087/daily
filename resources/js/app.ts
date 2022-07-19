@@ -18,7 +18,6 @@ require('./components/Input');
 require('./components/Excel');
 require('./components/Alldata');
 require('./components/Hundsontable');
-require('./components/ExcelJs');
-require('./components/Modal');
+require('./components/ModalComponent');
 require('./components/Page');
 require('./components/CreatePost');

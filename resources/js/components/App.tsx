@@ -10,7 +10,6 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import allLocales from "@fullcalendar/core/locales-all";
 import interactionPlugin from "@fullcalendar/interaction";
 import { INITIAL_EVENTS, createEventId } from "./event-utils";
-import {Modal} from "./Modal";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -62,7 +61,6 @@ function App() {
           eventClick={handleEventClick}
         //   dateClick={handleDateClick}
         />
-        <Modal showFlag={showModal} setShowMOdal={setShowModal} />
       </div>
     </div>
   );

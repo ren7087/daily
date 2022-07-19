@@ -4,7 +4,6 @@ import Hundsontable from "./Hundsontable";
 import Modal from 'react-modal';
 import styled from "styled-components";
 import {
-    Box,
     Button,
     Stack,
 } from '@chakra-ui/react';
@@ -21,17 +20,6 @@ const SButton = styled.button`
 const SInput = styled.input`
     border: 1px solid;
     border-radius: 8px;
-`
-
-const SBubmitButton = styled.button`
-  border: none;
-  color: white;
-  background: #dc3545;
-  padding: 7px
-  border-radius: 999px;
-  cursor: pointer;
-  width: 100%;
-  margin: 20px;
 `
 
 const customStyles = {

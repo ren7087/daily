@@ -298,12 +298,6 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'React ExcelJs',
-            'url'         => 'post/react-excelJs',
-            'icon'        => 'far fa-fw fa-file',
-            'label_color' => 'success',
-        ],
-        [
             'text'        => 'React Hundsontable',
             'url'         => 'post/react-hundsontable',
             'icon'        => 'far fa-fw fa-file',
