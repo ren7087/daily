@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
-import {useState} from "react";
 import Hundsontable from "./Hundsontable";
-import Modal from 'react-modal';
+import axios from "axios";
+import {useState, useEffect} from "react";
 import styled from "styled-components";
 import {
     Button,
@@ -9,6 +9,7 @@ import {
     Link
 } from '@chakra-ui/react';
 import { AddIcon, CalendarIcon} from '@chakra-ui/icons';
+import { Input } from "./Input"
 
 const SButton = styled.button`
     margin: 7px;
@@ -23,70 +24,67 @@ const SInput = styled.input`
     border-radius: 8px;
 `
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '30%',
-    height: 'auto',
-    zIndex: 1000,
-    positions: "absolute"
-  },
-}
+const SOverlay = styled.div`
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:5;
+`
+const SContent = styled.div`
+    z-index: 10;
+    width: 50%;
+    padding: 1em;
+    background: #fff;
+`
 
-Modal.setAppElement('#page')
+function Modal(props){
+    const {show, setShow} = props;
+    if (props.show) {
+        return (
+            <SOverlay onClick={() => setShow(false)}>
+                <SContent onClick={(e) => e.stopPropagation()}>
+                    <Input />
+                </SContent>
+            </SOverlay>
+        );
+    } else {
+        return null;
+    }
+};
 
 export const Page: React.FC = () => {
   let subtitle: HTMLHeadingElement | null
-  const [modalIsOpen, setIsOpen] = useState<boolean>(false)
+  const [show, setShow] = useState(false);
+    const [posts, setPosts] = useState([]);
 
-  function openModal() {
-    setIsOpen(true)
-  }
+useEffect (
+    ()=>{
+        axios.get("/api/getposts").then((res)=>{
+            setPosts(res.data.data);
+        })
+        .catch((e) => {
+            console.log(e);
+         })
+    },
+    []
+);
 
-  function afterOpenModal() {
-    if (subtitle) subtitle.style.color = '#f00'
-  }
-
-  function closeModal() {
-    setIsOpen(false)
-  }
 
   return (
     <div>
-      <Modal
-        contentLabel="Example Modal"
-        isOpen={modalIsOpen}
-        style={customStyles}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-      >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>新規登録</h2><br />
-        <form>
-          <p>お客様</p><SInput placeholder="ex)本田" /><br />
-          <p>場所</p><SInput placeholder="ex)八王子駅" /><br />
-          <p>商品</p><SInput placeholder="ex)テレビ" /><br />
-          <p>開始時間</p><SInput placeholder="ex)9:00" /><br />
-          <p>終了時間</p><SInput placeholder="ex)10:00" /><br />
-          <p>行為</p><SInput placeholder="ex)商談" /><br />
-          <p>移動手段</p><SInput placeholder="ex)車" /><br />
-          <p>交通費</p><SInput placeholder="ex)1000円" /><br />
-          <p>内容</p><SInput placeholder="ex)今日はいい天気でした" /><br />
-          <p>感想</p><SInput placeholder="ex)今日はいい天気でした" /><br /><br />
-        </form>
-        <SButton onClick={closeModal}>x</SButton>
-        <SButton>登録する</SButton>
-      </Modal>
       {/* <div style={{display: "flex"}}> */}
         <Stack direction='row' spacing={10}>
-            <Button leftIcon={<AddIcon />} colorScheme='teal' backgroundColor="teal" color="white" size='lg' padding={9} variant='solid' onClick={openModal}>
+            <Button rightIcon={<AddIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline' onClick={() => setShow(true)}>
                 新規登録
             </Button>
-            <Button rightIcon={<CalendarIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>
+            <Modal show={show} setShow={setShow} />
+            <Button rightIcon={<AddIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>
             <Link color="white" href='/post/react-input' textDecoration="none">新規登録</Link>
             </Button>
             <Button rightIcon={<CalendarIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>

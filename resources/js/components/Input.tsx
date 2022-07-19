@@ -10,7 +10,8 @@ const SCard = styled.div`
     background-color: #fff;
     border-radius: 30px;
     width: 65%;
-    height: auto;
+    height: 900px;
+    overflow: scroll;
 `;
 
 const SForm = styled.form`
