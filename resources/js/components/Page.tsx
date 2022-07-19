@@ -10,19 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { AddIcon, CalendarIcon} from '@chakra-ui/icons';
 import { Input } from "./Input"
-
-const SButton = styled.button`
-    margin: 7px;
-    background-color: red;
-    color: white;
-    width: 80px;
-    height: 30px;
-`
-
-const SInput = styled.input`
-    border: 1px solid;
-    border-radius: 8px;
-`
+import App from './App';
 
 const SOverlay = styled.div`
     position: fixed;
@@ -58,45 +46,45 @@ function Modal(props){
     }
 };
 
+function ModalCalendar(props){
+    const {showCalendar, setShowCalendar} = props;
+    if (props.showCalendar) {
+        return (
+            <SOverlay onClick={() => setShowCalendar(false)}>
+                <SContent onClick={(e) => e.stopPropagation()}>
+                    <App />
+                </SContent>
+            </SOverlay>
+        );
+    } else {
+        return null;
+    }
+};
+
 export const Page: React.FC = () => {
-  let subtitle: HTMLHeadingElement | null
-  const [show, setShow] = useState(false);
-    const [posts, setPosts] = useState([]);
+    let subtitle: HTMLHeadingElement | null
+    const [show, setShow] = useState(false);
+    const [showCalendar, setShowCalendar] = useState(false);
 
-useEffect (
-    ()=>{
-        axios.get("/api/getposts").then((res)=>{
-            setPosts(res.data.data);
-        })
-        .catch((e) => {
-            console.log(e);
-         })
-    },
-    []
-);
+    return (
+        <div>
+        {/* <div style={{display: "flex"}}> */}
+            <Stack direction='row' spacing={10}>
+                <Button rightIcon={<AddIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline' onClick={() => setShow(true)}>
+                    新規登録
+                </Button>
+                <Modal show={show} setShow={setShow} />
+                <Button rightIcon={<CalendarIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline' onClick={() => setShowCalendar(true)}>
+                    カレンダー
+                </Button>
+                <ModalCalendar showCalendar={showCalendar} setShowCalendar={setShowCalendar} />
+            </Stack><br />
 
-
-  return (
-    <div>
-      {/* <div style={{display: "flex"}}> */}
-        <Stack direction='row' spacing={10}>
-            <Button rightIcon={<AddIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline' onClick={() => setShow(true)}>
-                新規登録
-            </Button>
-            <Modal show={show} setShow={setShow} />
-            <Button rightIcon={<AddIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>
-            <Link color="white" href='/post/react-input' textDecoration="none">新規登録</Link>
-            </Button>
-            <Button rightIcon={<CalendarIcon />} colorScheme='teal' backgroundColor="teal" color="white" size="lg" padding={9} variant='outline'>
-            <Link color="white" href='/post/react-calendar' textDecoration="none">カレンダー</Link>
-            </Button>
-        </Stack><br />
-
-        <Hundsontable/>
-      {/* </div><br /> */}
-      <br />
-    </div>
-  )
+            <Hundsontable/>
+        {/* </div><br /> */}
+        <br />
+        </div>
+    )
 }
 
 if (document.getElementById('page')) {
